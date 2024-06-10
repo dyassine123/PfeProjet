@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Educo
+Version: 3.0.0
+Author: 
+Website: 
+Purchase: 
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!-- Begin Head -->
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/course_single.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:30 GMT -->
+<head>
+    <meta charset="utf-8" />
+    <title>Educo Multipurpose Responsive HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Educo" />
+    <meta name="keywords" content="Educo, html template, Education template" />
+    <meta name="author" content="Kamleshyadav" />
+    <meta name="MobileOptimized" content="320" />
+
+   
+</head>
+
+<body>
+    <!--Page main section start-->
+    <div id="educo_wrapper">
+        <!--Header start-->
+        <app-header *ngIf="token; else noRole"></app-header>
+
+        <!-- Template to render if 'role' is null or undefined -->
+        <ng-template #noRole>
+          <app-header2></app-header2>
+        </ng-template>
+
+        <!--header end -->
+        <!--Breadcrumb start-->
+        <div class="ed_pagetitle">
+            <div class="ed_img_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-4 col-sm-6">
+                        <div class="page_title">
+                            <h2>Single course</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-sm-6">
+                        <ul class="breadcrumb">
+                            <li><a href="">Accueil</a></li>
+                            <li><i class="fa fa-chevron-left"></i></li>
+                            <li><a href="cours">cours</a></li>
+                            <li><i class="fa fa-chevron-left"></i></li>
+                            <li><a href="#">description</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Breadcrumb end-->
+        <!--Single content start-->
+        <div class="ed_graysection ed_course_single ed_toppadder80 ed_bottompadder80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-8 col-sm-12 col-12">
+                        <div class="ed_course_single_item">
+                            <div class="ed_course_single_image">
+                                <img src="{{event.image}}" alt="event image" style="max-width: 100%; height: auto; display: block; max-height: 400px;"  />
+                            </div>
+                            <div class="ed_course_single_info">
+                                <h2>{{event.nom}} <span>{{event.prix}} Dt</span></h2>
+                                <div class="ed_rating">
+                                    <div class="row w-100 justify-content-between">
+                                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                                    <div class="ed_stardiv">
+                                                        <div class="star-rating"><span style="width:80%;"></span></div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 pull-right text-right">
+                                            <div class="ed_views">
+                                                <i class="fa fa-users"></i>
+                                                <span>35 students</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row  w-100 justify-content-between">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                        <div class="course_detail">
+                                            <div class="course_faculty">
+                                                <img [src]="event.tuteur.image ? event.tuteur.image : '/assets/utilisateur.jpg'" alt=""> <a href="instructor_dashboard.html">{{event.tuteur.nom}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 pull-right text-right">
+                                        <div class="ed_course_duration">
+                                            
+                                            <p>{{event.categorie.nomCategorie}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ed_course_single_tab">
+                                <div role="tabpanel">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation"><a class="active" href="#description" aria-controls="description" role="tab" data-bs-toggle="tab">description</a></li>
+                                        <li role="presentation"><a href="#students" aria-controls="students" role="tab" data-bs-toggle="tab">students</a></li>
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="description">
+                                            <div class="ed_course_tabconetent">
+                                                <h2>about course</h2>
+                                                <p>{{event.description}}</p>
+
+                                                
+                                            </div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="students">
+                                            <div class="ed_inner_dashboard_info">
+                                                <div class="ed_course_single_info">
+                                                    <h2>total students :- <span>20</span></h2>
+                                                    <h5>10 students recently join this course</h5>
+                                                    <div class="ed_add_students">
+                                                        <img src="../assets/images/default/content/S01.jpg" alt="">
+                                                        <span>adler braxton</span>
+                                                        <p>new student</p>
+                                                    </div>
+                                                    <div class="ed_add_students">
+                                                        <img src="../assets/images/default/content/S02.jpg" alt="">
+                                                        <span>baldwin dallas</span>
+                                                        <p>new student</p>
+                                                    </div>
+                                                    <div class="ed_add_students">
+                                                        <img src="../assets/images/default/content/S03.jpg" alt="">
+                                                        <span>carney Tate</span>
+                                                        <p>new student</p>
+                                                    </div>
+                                                    <div class="ed_add_students">
+                                                        <img src="../assets/images/default/content/S04.jpg" alt="">
+                                                        <span>dwight easton</span>
+                                                        <p>new student</p>
+                                                    </div>
+                                                    <div class="ed_add_students">
+                                                        <img src="../assets/images/default/content/S05.jpg" alt="">
+                                                        <span>elbert wade</span>
+                                                        <p>new student</p>
+                                                    </div>
+                                                    <div class="ed_add_students">
+                                                        <img src="../assets/images/default/content/S06.jpg" alt="">
+                                                        <span>hailey kyler</span>
+                                                        <p>new student</p>
+                                                    </div>
+                                                    <div class="ed_add_students">
+                                                        <img src="../assets/images/default/content/S07.jpg" alt="">
+                                                        <span>graham ryder</span>
+                                                        <p>new student</p>
+                                                    </div>
+                                                    <div class="ed_add_students">
+                                                        <img src="../assets/images/default/content/S08.jpg" alt="">
+                                                        <span>jaxon keegan</span>
+                                                        <p>new student</p>
+                                                    </div>
+                                                    <div class="ed_add_students">
+                                                        <img src="../assets/images/default/content/S09.jpg" alt="">
+                                                        <span>kealy sage</span>
+                                                        <p>new student</p>
+                                                    </div>
+                                                    <div class="ed_add_students">
+                                                        <img src="../assets/images/default/content/S10.jpg" alt="">
+                                                        <span>lavern gunner</span>
+                                                        <p>new student</p>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                                        <div class="row">
+                                                            <div class="ed_blog_bottom_pagination ed_toppadder40">
+                                                                <nav>
+                                                                    <ul class="pagination">
+                                                                        <li><a href="javascript:void(0);">1</a></li>
+                                                                        <li><a href="javascript:void(0);">2</a></li>
+                                                                        <li><a href="javascript:void(0);">3</a></li>
+                                                                        <li class="active"><a href="javascript:void(0);">Next <span class="sr-only">(current)</span></a></li>
+                                                                    </ul>
+                                                                </nav>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!--tab End-->
+                        </div>
+                        
+                    </div>
+                    <!--Sidebar Start-->
+                    <div class="col-lg-3 col-md-4 col-sm-12 col-12">
+                        <div class="sidebar_wrapper_upper">
+                            <div class="sidebar_wrapper">
+                                <aside class="widget widget_button" *ngIf="userRole === 'etudiant' && !isReserved">
+                                    <a (click)="reserver(event)" class="ed_btn ed_green">Reservation</a>
+                                </aside>
+                                <aside class="widget widget_button" *ngIf="userRole === 'etudiant' && isReserved">
+                                    <a (click)="annulerReservation()" class="ed_btn ed_green">Annuler Reservation</a>
+                                </aside>
+                                <aside class="widget widget_button" *ngIf="userRole === 'etudiant'">
+                                    <a (click)="makePayment()" class="ed_btn green-button">Payée</a>
+                                </aside>
+                                <aside class="widget widget_categories">
+                                    <h4 class="widget-title">Cours associés</h4>
+                                    <ul>
+                                        
+                                        <li *ngFor="let coursRelated of listCours">
+                                            <a href="/coursDetails/{{coursRelated.id}}"><i class="fa fa-chevron-right"></i> {{coursRelated.nom}}</a>
+                                        </li>
+                                    </ul>
+                                </aside>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!--Sidebar End-->
+                </div>
+            </div>
+        </div>
+        <!--Single content end-->
+        
+       
+    </div>
+    <!--Page main section end-->
+
+
+
+    <!--Main js file start-->
+   
+</body>
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/course_single.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:32 GMT -->
+</html>

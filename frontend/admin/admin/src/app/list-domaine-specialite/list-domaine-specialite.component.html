@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<!-- Mirrored from w3crm.dexignzone.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Feb 2024 21:42:15 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:title" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:image" content="social-image.png">
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>W3CRM Customer Relationship Management</title>
+	
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+  <div id="preloader">
+		<div class="lds-ripple">
+			<div></div>
+			<div></div>
+		</div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+       <app-header></app-header>
+        
+	   <app-menu></app-menu>
+        <div class="content-body">
+			
+            <!-- container starts -->
+            <div class="container-fluid">
+				
+                <!-- row -->
+				<div class="element-area">
+					<div class="demo-view">
+						<div class="container-fluid pt-0 ps-0 pe-lg-4 pe-0">
+
+						<!-- Container starts -->
+						<div class="container-fluid">
+							<!-- Row starts -->
+							<div class="row">
+							  
+							  <div class="col-lg-4">
+								<div class="card">
+								  <div class="card-header d-flex justify-content-between align-items-center">
+									<h4 class="card-title">Liste des expertises</h4>
+									<input  type="search" class="form-control w-auto" placeholder="Search..." aria-label="Search domains" [(ngModel)]="searchQueryDomaine">
+								  </div>
+								  <div class="card-body">
+									<div class="table-responsive" *ngIf="filteredDomaine.length > 0; else noDomaineTemplate">
+									  <table class="table table-bordered verticle-middle">
+										<thead>
+										  <tr>
+											<th scope="col">#</th>
+											<th scope="col">Nom Expertise</th>
+											<th scope="col">Action</th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr *ngFor="let domaine of filteredDomaine |paginate:{itemsPerPage:10,currentPage:p}">
+											<td>{{domaine.id}}</td>
+											<td>{{domaine.nomDomaine}}</td>
+											<td>
+											  <a href="UpdateCES/{{domaine.id}}"  (click)="showForm('Expertise')"class="me-3" data-bs-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted" ></i></a>
+											  <a href="javascript:void(0);" (click)="DeleteDomaine(domaine)"  data-bs-toggle="tooltip" data-placement="top" title="Delete"><i class="fa-solid fa-xmark text-danger"></i></a>
+											</td>
+										  </tr>
+										</tbody>
+									  </table>
+									  <pagination-controls style="text-align: right;" (pageChange)="p = $event"></pagination-controls>
+									</div>
+									<ng-template #noDomaineTemplate>
+									  <div class="alert alert-warning" role="alert">
+										Aucun domaine disponible.
+									  </div>
+									</ng-template>
+								  </div>
+								</div>
+							  </div>
+							  
+							  <div class="col-lg-4">
+								<div class="card">
+								  <div class="card-header d-flex justify-content-between align-items-center">
+									<h4 class="card-title">Liste des spécialités</h4>
+									<input  type="search" class="form-control w-auto" placeholder="Search..." aria-label="Search specialities" [(ngModel)]="searchQuerySpecialite">
+								  </div>
+								  <div class="card-body">
+									<div class="table-responsive" *ngIf="filteredSpecilaite.length > 0; else noSpecialiteTemplate">
+									  <table class="table table-bordered verticle-middle">
+										<thead>
+										  <tr>
+											<th scope="col">#</th>
+											<th scope="col">Nom Spécialité</th>
+											<th scope="col">Action</th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr *ngFor="let specialite of filteredSpecilaite |paginate:{itemsPerPage:10,currentPage:p}">
+											<td>{{specialite.id}}</td>
+											<td>{{specialite.nomSpecialite}}</td>
+											<td>
+												<a href="UpdateCES/{{specialite.id}}" (click)="showForm('specialite')" class="me-3" data-bs-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted"></i></a>
+												<a href="javascript:void(0);" (click)="DeleteSpecialite(specialite)" data-bs-toggle="tooltip" data-placement="top" title="Delete"><i class="fa-solid fa-xmark text-danger"></i></a>
+											</td>
+										  </tr>
+										</tbody>
+									  </table>
+									  <pagination-controls style="text-align: right;" (pageChange)="p = $event"></pagination-controls>
+									</div>
+									<ng-template #noSpecialiteTemplate>
+									  <div class="alert alert-warning" role="alert">
+										Aucune spécialité disponible.
+									  </div>
+									</ng-template>
+								  </div>
+								</div>
+							  </div>
+							
+
+							<div class="col-lg-4">
+								<div class="card">
+								  <div class="card-header d-flex justify-content-between align-items-center">
+									<h4 class="card-title">Liste des catégories</h4>
+									<input type="search" class="form-control w-auto" placeholder="Search..." aria-label="Search categories" [(ngModel)]="searchQueryCategorie">
+								  </div>
+								  <div class="card-body">
+									<div class="table-responsive" *ngIf="filteredCategorie.length > 0; else noCategorieTemplate">
+									  <table class="table table-bordered verticle-middle">
+										<thead>
+										  <tr>
+											<th scope="col">#</th>
+											<th scope="col">Nom Catégorie</th>
+											<th scope="col">Action</th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr *ngFor="let categorie of filteredCategorie |paginate:{itemsPerPage:10,currentPage:p}">
+											<td>{{categorie.id}}</td>
+											<td>{{categorie.nomCategorie}}</td>
+											<td>
+											  <a href="UpdateCES/{{categorie.id}}" (click)="showForm('categorie')" class="me-3" data-bs-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil color-muted" ></i></a>
+											  <a href="javascript:void(0);" (click)="DeleteCategorie(categorie)" data-bs-toggle="tooltip" data-placement="top" title="Delete"><i class="fa-solid fa-xmark text-danger"></i></a>
+											</td>
+										  </tr>
+										</tbody>
+									  </table>
+									  <pagination-controls style="text-align: right;" (pageChange)="p = $event"></pagination-controls>
+									</div>
+									<ng-template #noCategorieTemplate>
+									  <div class="alert alert-warning" role="alert">
+										Aucune catégorie disponible.
+									  </div>
+									</ng-template>
+								  </div>
+								</div>
+							  </div>
+							</div>
+							<!-- Row ends -->
+						  </div>
+						  
+						
+<!-- Container ends -->
+
+
+					
+				</div>
+				</div>
+					
+				</div>
+			</div>			
+        </div>
+        <app-footer></app-footer>
+
+        
+    </div>
+  
+</body>
+
+</html>

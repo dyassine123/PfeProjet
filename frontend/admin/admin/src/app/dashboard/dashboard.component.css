@@ -1,0 +1,338 @@
+/* Increase card size */
+.card {
+    padding: 1.5rem; /* More internal space */
+    margin: 1rem 0; /* More space around the card */
+    font-size: 1rem; /* Larger text */
+}
+
+/* If the card contains an image or icon, you might want to scale it up */
+.card .icon-box svg {
+    width: 50px; /* Example size, adjust as needed */
+    height: 50px; /* Match width for square aspect ratio, adjust as needed */
+}
+
+/* Adjust heading sizes inside cards for better visibility */
+.card .card-title {
+    font-size: 1.5rem; /* Larger title */
+}
+
+/* Adjust content size inside cards */
+.card .card-body {
+    font-size: 1rem; /* Larger text */
+}
+
+/* For responsive design, ensure cards still layout well on smaller screens */
+@media (max-width: 768px) {
+    .card {
+        margin: 1rem; /* Adjust margins for smaller screens if necessary */
+    }
+}
+/* Base container and row styling */
+.container-fluid {
+    padding: 2rem;
+}
+
+.row {
+    margin: 0 -15px; /* Adjust spacing between cards */
+}
+
+/* Card styling for statistics */
+.card {
+    background: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Gentle lift effect */
+}
+
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    margin: 0;
+}
+
+/* Icon box styling */
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.icon-box svg {
+    fill: #007bff; /* Match with the primary color of the theme */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Stats card body styling */
+.card .card-body {
+    padding: 1rem 1.25rem;
+}
+
+/* Styling for list of stats */
+.project-list li {
+    list-style: none;
+    padding: 0.25rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.project-list li svg {
+    margin-right: 0.5rem;
+    transition: fill 0.3s ease-in-out;
+}
+
+/* Progress bar customization */
+.progress {
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+    height: 5px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.progress-bar {
+    transition: width 1s ease-in-out; /* Animated progress bar */
+    background-color: #007bff; /* Progress bar color */
+}
+
+/* Text styling inside the cards */
+.card h6, .card h3 {
+    margin: 0;
+}
+
+/* Tooltip hover effect */
+[data-bs-toggle="tooltip"] {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+[data-bs-toggle="tooltip"]:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .card {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .row {
+        margin: 0;
+    }
+}
+
+/* Responsive adjustments for xs to md devices */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 1rem;
+    }
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.card .icon-box {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.icon-box i {
+    font-size: 2rem;
+}
+
+.card h3 {
+    margin-bottom: 0;
+    font-size: 3rem;
+}
+
+.card h6 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card {
+    min-height: 160px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.container-fluid {
+    max-width: 1200px;
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.circle-card {
+    position: relative;
+    text-align: center;
+}
+
+.circle-card h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.card .icon-box {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.icon-box i {
+    font-size: 2rem;
+}
+
+.card h3 {
+    margin-bottom: 0;
+    font-size: 3rem;
+}
+
+.card h6 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card {
+    min-height: 160px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.container-fluid {
+    max-width: 1200px;
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.circle-card {
+    position: relative;
+    text-align: center;
+}
+
+.circle-card .depostit-card-media h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    padding: 1.5rem;
+    min-height: 160px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.5rem;
+}
+
+.icon-box i {
+    font-size: 2rem;
+}
+
+.card h3 {
+    margin-bottom: 0;
+    font-size: 3rem;
+}
+
+.card h6 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.container-fluid {
+    max-width: 1200px;
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.circle-card {
+    position: relative;
+    text-align: center;
+}
+
+.circle-card canvas {
+    margin: 20px auto;
+    display: block;
+    width: 80%;
+    height: auto;
+}
+
+.project-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-list li {
+    padding: 0.25rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.project-list li svg {
+    margin-right: 0.5rem;
+}
+
+.progress-bar {
+    background-color: #007bff;
+}

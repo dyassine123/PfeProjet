@@ -1,0 +1,212 @@
+/* Base styles for the background and heading */
+.ed_transprentbg {
+  background-color: #f7f7f7; /* Consistent lighter background */
+  padding: 80px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06); /* Subtle shadow for depth */
+}
+
+.ed_heading_top {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-bottom: 60px; /* Adjusted bottom margin */
+}
+
+.ed_heading_top h3 {
+  font-size: 30px; /* Larger font size for emphasis */
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: 600; /* Bolder weight */
+}
+
+/* Search wrapper and input styling */
+.ed_search_wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 50px;
+  margin-top:-100px; /* Increase this value to add more space above the search bar */
+  margin-bottom: 50px; /* Increase the top margin to push it upwards and add more space below */
+}
+
+.ed_search_input {
+  width: 60%; /* Adjusted width */
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  transition: border-color 0.3s; /* Transition for focus effect */
+}
+
+.ed_search_input:focus {
+  border-color: #007bff; /* Highlight color when focused */
+}
+
+/* Styles for search results */
+.ed_search_result {
+  background: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Team member styling */
+.ed_team_member {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  transition: all 0.3s ease-in-out; /* Smooth all transitions */
+}
+
+.ed_team_member:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.ed_team_member_img img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Consistent border-radius */
+  transition: transform 0.3s ease-in-out;
+}
+
+.ed_team_member:hover .ed_team_member_img img {
+  transform: scale(1.1); /* Subtle zoom effect */
+}
+
+.ed_team_member_description {
+  padding: 15px;
+  text-align: center;
+}
+
+.ed_team_member_description h4 a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s; /* Smooth transition for link color */
+}
+
+.ed_team_member_description h4 a:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+.ed_team_member_description h5 {
+  color: #666;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.ed_team_member_description p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .ed_search_input {
+      width: 75%;
+  }
+}
+
+@media (max-width: 767px) {
+  .ed_search_input {
+      width: 85%;
+  }
+}
+
+.ed_section_custom_padding {
+  margin-top: -60px !important; /* Override padding if necessary */
+  margin-bottom: 150px !important; /* Override padding if necessary */
+}
+
+/* Ensuring the row is displayed as a flex container */
+.ed_team_wrapper .row {
+  display: flex;
+  flex-wrap: wrap;  /* Allows multiple rows */
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+/* Configuring each column to be a flex container, which will help in aligning the content properly */
+.ed_team_wrapper .col-lg-3, .ed_team_wrapper .col-md-4, .ed_team_wrapper .col-sm-6, .ed_team_wrapper .col-12 {
+  display: flex;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 30px; /* Space between cards */
+}
+
+/* Making the team member card a flex container */
+.ed_team_member {
+  display: flex;
+  flex-direction: column;
+  background: #FFF; /* Background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Ensures content does not flow outside the boundary */
+  flex: 1 0 100%; /* Flex grow, flex shrink, and flex basis */
+}
+
+/* Ensuring the image container has a fixed height */
+.ed_team_member_img {
+  width: 100%; /* Full width of the container */
+  height: 200px; /* Fixed height for images */
+  overflow: hidden; /* Hides parts of the image that overflow the container */
+  display: flex;
+  align-items: center; /* Centers the image vertically */
+  justify-content: center; /* Centers the image horizontally */
+}
+
+.ed_team_member_img img {
+  height: 100%; /* Full height of its container */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Covers the full area of the container, cropping if necessary */
+}
+
+/* Description container should flexibly fill the available space */
+.ed_team_member_description {
+  padding: 20px; /* Padding inside the description box */
+  flex-grow: 1; /* Takes up any available space */
+  display: flex;
+  flex-direction: column; /* Stacks content vertically */
+}
+
+/* Anchors within the description to ensure clickable areas are styled consistently */
+.ed_team_member_description a {
+  color: #333; /* Text color */
+  text-decoration: none; /* No underline */
+}
+
+/* Ensuring the row behaves as a flex container */
+.ed_counter_wrapper .row {
+  display: flex;
+  align-items: center;  /* Aligns items vertically in the center */
+  justify-content: space-around;  /* Distributes space evenly around items */
+  flex-wrap: wrap;  /* Allows items to wrap in smaller screens */
+}
+
+/* Styling individual items to ensure consistent sizing and alignment */
+.ed_counter_wrapper .col-lg-4, .ed_counter_wrapper .col-md-4, .ed_counter_wrapper .col-sm-12, .ed_counter_wrapper .col-12 {
+  display: flex;
+  flex-direction: column;  /* Organizes content vertically */
+  align-items: center;  /* Centers content horizontally within each column */
+  text-align: center;  /* Centers text */
+  margin-bottom: 20px;  /* Adds space below each item for separation */
+}
+
+.ed_counter_wrapper .ed_chart_ratio {
+  width: 100%;  /* Ensures the container uses all available width */
+  padding: 20px;  /* Adds padding around the content for spacing */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Optional: Adds subtle shadow for depth */
+  border-radius: 8px;  /* Optional: Rounds corners */
+}
+
+/* Icon style for uniform size and margin */
+.ed_counter_wrapper .fa {
+  font-size: 36px;  /* Increases icon size */
+  margin-bottom: 10px;  /* Space below the icon */
+}
+
+
+

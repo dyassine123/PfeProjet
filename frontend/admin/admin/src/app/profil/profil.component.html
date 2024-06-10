@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="W3CRM: Customer Relationship Management Admin Template">
+    <meta property="og:title" content="W3CRM: Customer Relationship Management Admin Template">
+    <meta property="og:description" content="W3CRM: Customer Relationship Management Admin Template">
+    <meta property="og:image" content="social-image.png">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>W3CRM Customer Relationship Management</title>
+    
+</head>
+
+<body data-typography="poppins" data-theme-version="light" data-layout="vertical" data-nav-headerbg="black" data-headerbg="color_1">
+
+    <div id="preloader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+        <app-header></app-header>
+        <app-menu></app-menu>
+
+        <div class="container">
+            <div class="row" style="padding-left: 20% ;">
+                <!-- Profile Card -->
+                <div class="col-xl-5 col-lg-5 offset-xl-1 offset-lg-1 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="account-settings">
+                                <div class="user-profile">
+                                    <div class="user-avatar">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Maxwell Admin">
+                                    </div>
+                                    <h5 class="user-name">{{this.userDetails.nom}} {{this.userDetails.prenom}}</h5>
+                                    <h6 class="user-email">{{this.userDetails.email}}</h6>
+                                </div>
+                                <div class="about">
+                                    <h5 class="mb-2 text-primary">À propos</h5>
+                                    <p>Je suis {{this.userDetails.nom}} {{this.userDetails.prenom}}, l'administrateur de notre plateforme de tutorat en ligne. J'assure que notre site offre une expérience utilisateur fluide et enrichissante.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Personal Details Card -->
+                <div class="col-xl-5 col-lg-5 offset-xl-1 offset-lg-1 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h6 class="mb-3 text-primary">Détails personnels</h6>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="form-group">
+                                        <label for="fullName">Nom complet</label>
+                                        <input type="text" class="form-control" id="fullName" placeholder="{{userDetails.prenom}} {{userDetails.nom}}" value="{{userDetails.prenom}} {{userDetails.nom}}" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="form-group">
+                                        <label for="eMail">Email</label>
+                                        <input type="email" class="form-control" id="eMail" placeholder="{{userDetails.email}}"value="{{userDetails.email}}" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="form-group">
+                                        <label for="role">Role</label>
+                                        <input type="text" class="form-control" id="role" placeholder="{{userDetails.role}}"value="{{userDetails.role}}" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <app-footer></app-footer>
+    </div>
+
+</body>
+</html>

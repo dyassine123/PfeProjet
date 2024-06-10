@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Frontend</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/default-style.css" rel="stylesheet" type="text/css" />
+
+    <!-- favicon links -->
+    <link rel="shortcut icon" type="image/png" href="../assets/images/header/favicon.png" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QOYzwqjsYH+rCK6pOxOEPZyWG8LwM/+0vWxCxbvYUuZ+V7xOT+Gr1j79EL2I38Xr" crossorigin="anonymous">
+ 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
+</head>
+<body>
+  <app-root></app-root>
+
+  <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/modernizr.js"></script>
+    <script src="assets/js/owl.carousel.js"></script>
+    <script src="assets/js/smooth-scroll.js"></script>
+    <script src="assets/js/plugins/revel/jquery.themepunch.tools.min.js"></script>
+    <script src="assets/js/plugins/revel/jquery.themepunch.revolution.min.js"></script>
+    <script src="assets/js/plugins/revel/revolution.extension.layeranimation.min.js"></script>
+    <script src="assets/js/plugins/revel/revolution.extension.navigation.min.js"></script>
+    <script src="assets/js/plugins/revel/revolution.extension.slideanims.min.js"></script>
+    <script src="assets/js/plugins/countto/jquery.countTo.js"></script>
+    <script src="assets/js/plugins/countto/jquery.appear.js"></script>
+    <script src="assets/js/default-custom.js"></script>
+    <script>// Initialization for ES Users
+      import { Dropdown, Collapse, initMDB } from "mdb-ui-kit";
+      
+      
+      
+      initMDB({ Dropdown, Collapse });</script>
+
+      <script>
+        
+        document.getElementById('passwordForm').onsubmit = function(e) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+    
+            // Vérifie si les mots de passe correspondent
+            if(password !== confirmPassword) {
+                e.preventDefault(); // Empêche la soumission du formulaire
+                alert('Les mots de passe ne correspondent pas.');
+            }
+          }// Si les mots de passe correspondent, le formulaire sera soumis normalement
+        ;
+   </script>
+
+
+</body>
+</html>

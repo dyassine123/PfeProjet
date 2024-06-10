@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+
+<html *ngIf="this.userDetails" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Educo Multipurpose Responsive HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Educo" />
+    <meta name="keywords" content="Educo, html template, Education template" />
+    <meta name="author" content="Kamleshyadav" />
+    <meta name="MobileOptimized" content="320" />
+
+   
+</head>
+
+<body>
+    
+    <div id="educo_wrapper">
+        <app-header></app-header>
+
+        <div class="ed_pagetitle">
+            <div class="ed_img_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-4 col-sm-6">
+                        <div class="page_title">
+                            <h2>Mon profil</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-sm-6">
+                        <ul class="breadcrumb">
+                            <li><a href="">Accueil</a></li>
+                            <li><i class="fa fa-chevron-left"></i></li>
+                            <li><a href="profil">Mon profil</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="ed_dashboard_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                        <div class="ed_sidebar_wrapper">
+                            <div class="ed_profile_img">
+                                <img [src]="etudiant.image ? etudiant.image : '/assets/utilisateur.jpg'" alt="Dashboard Image" />
+                            </div>
+                            <h3>{{this.etudiant.nom}} {{this.etudiant.prenom}}</h3>
+                            <div class="ed_tabs_left">
+                                <ul class="nav nav-tabs">
+                                    <li><a class="active" href="#dashboard" data-bs-toggle="tab">dashboard</a></li>
+                                    <li><a href="#courses" data-bs-toggle="tab">Reservation <span>{{totalReservation}}</span></a></li>
+                                    <li><a href="#profile" data-bs-toggle="tab">profile</a></li>
+                                    <li><a href="#setting" data-bs-toggle="tab">Modifier mot de passe</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-12">
+                        <div class="ed_dashboard_tab">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="dashboard">
+                                    <div class="ed_dashboard_tab_info">
+                                        <h1>Bonjour, <span>étudiant</span></h1>
+                                        <h1>Bienvenue sur le tableau de bord</h1>
+                                        <p>Bonjour <strong>{{this.etudiant.nom}} {{this.etudiant.prenom}}</strong>, ici vous pouvez consulter et mettre à jour votre profil, vos cours abonnés, vos activités, vos notifications et d'autres éléments. Toutes les mises à jour mentionnées ci-dessus peuvent être modifiées à partir du panneau de gauche fourni.</p>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="courses">
+                                    <div class="ed_dashboard_inner_tab">
+                                        <div role="tabpanel">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                
+                                                <li role="presentation"><a href="#result" aria-controls="result" role="tab" data-bs-toggle="tab">Reservation</a></li>
+                                            </ul>
+
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="my">
+                                                    <div class="ed_dashboard_inner_tab" id="reservation">
+                                                        <h2>Reservation</h2>
+                                                        <div class="ed_mostrecomeded_course_slider">
+                                                            <div class="row" *ngIf="listCoursReserver && listCoursReserver.length > 0">
+                                                                <div class="col-lg-6 col-md-6 col-sm-12 col-12 ed_bottompadder20" *ngFor="let reservation of listCoursReserver">
+                                                                    <div class="ed_item_img">
+                                                                        <img src="{{ reservation.cours.image }}" alt="item1" class="img-responsive">
+                                                                    </div>
+                                                                    <div class="ed_item_description ed_most_recomended_data">
+                                                                        <h4><a href="course_single.html">{{ reservation.cours.nom }}</a><span>{{ reservation.cours.prix }} Dt</span></h4>
+                                                                        <div class="row">
+                                                                            <div class="ed_rating">
+                                                                                <div class="col-lg-6 col-md-7 col-sm-6 col-6">
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                                            <div class="ed_stardiv">
+                                                                                                <div class="star-rating"><span style="width:80%;"></span></div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                                           
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-lg-6 col-md-5 col-sm-6 col-6">
+                                                                                   
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p>{{ reservation.cours.description }}</p>
+                                                                        <a href="/coursDetails/{{reservation.cours.id}}" class="ed_getinvolved">Get Involved <i class="fa fa-long-arrow-right"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div *ngIf="!listCoursReserver || listCoursReserver.length === 0">
+                                                                <p>Pas de cours réservé.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="result">
+                                                    <div class="ed_dashboard_inner_tab" id="reservation">
+                                                        <h2>Reservation</h2>
+                                                        <div class="ed_mostrecomeded_course_slider">
+                                                            <div class="row" *ngIf="listCoursReserver && listCoursReserver.length > 0">
+                                                                <div class="col-lg-6 col-md-6 col-sm-12 col-12 ed_bottompadder20" *ngFor="let reservation of listCoursReserver">
+                                                                    <div class="ed_item_img">
+                                                                        <img src="{{ reservation.cours.image }}" alt="item1" class="img-responsive">
+                                                                    </div>
+                                                                    <div class="ed_item_description ed_most_recomended_data">
+                                                                        <h4><a href="course_single.html">{{ reservation.cours.nom }}</a><span>{{ reservation.cours.prix }} Dt</span></h4>
+                                                                        <div class="row">
+                                                                            <div class="ed_rating">
+                                                                                <div class="col-lg-6 col-md-7 col-sm-6 col-6">
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                                            <div class="ed_stardiv">
+                                                                                                <div class="star-rating"><span style="width:80%;"></span></div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                                                           
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-lg-6 col-md-5 col-sm-6 col-6">
+                                                                                   
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p>{{ reservation.cours.description }}</p>
+                                                                        <a href="/coursDetails/{{reservation.cours.id}}" class="ed_getinvolved">Get Involved <i class="fa fa-long-arrow-right"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div *ngIf="!listCoursReserver || listCoursReserver.length === 0">
+                                                                <p>Pas de cours réservé.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                                
+                                            </div>
+
+                                        </div>
+                                        <!--tab End-->
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="activity">
+                                    <div class="ed_dashboard_inner_tab">
+                                        <div role="tabpanel">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li role="presentation"><a class="active" href="#personal" aria-controls="personal" role="tab" data-bs-toggle="tab">personal</a></li>
+                                                <li role="presentation"><a href="#mentions" aria-controls="mentions" role="tab" data-bs-toggle="tab">mentions</a></li>
+                                                <li role="presentation"><a href="#favourites" aria-controls="favourites" role="tab" data-bs-toggle="tab">favourites</a></li>
+                                            </ul>
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="personal">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>What's new, andrehouse@123 ?</h2>
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                                                <form class="ed_tabpersonal">
+                                                                    <div class="form-group">
+                                                                        <textarea name="whats_new" class="form-control" id="whats_new" cols="50" rows="5"></textarea>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <button class="btn ed_btn ed_green">post update</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="mentions">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>sorry, there was no mentions event found. please try a different filter</h2>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="favourites">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>sorry, there was no favourites event found. please try a different filter</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!--tab End-->
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="notification">
+                                    <div class="ed_dashboard_inner_tab">
+                                        <div role="tabpanel">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li role="presentation"><a class="active" href="#unread" aria-controls="unread" role="tab" data-bs-toggle="tab">unread</a></li>
+                                                <li role="presentation"><a href="#read" aria-controls="read" role="tab" data-bs-toggle="tab">read</a></li>
+                                            </ul>
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="unread">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>you have no unread notifications</h2>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="read">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>you have no notifications</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--tab End-->
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="profile">
+                                    <div class="ed_dashboard_inner_tab">
+                                        <div role="tabpanel">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li role="presentation"><a class="active" href="#view" aria-controls="view" role="tab" data-bs-toggle="tab">view</a></li>
+                                                <li role="presentation"><a href="#edit" aria-controls="edit" role="tab" data-bs-toggle="tab">edit</a></li>
+                                            </ul>
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="view">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>your profile</h2>
+                                                        <table id="profile_view_settings">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Nom</th>
+                                                                    <th>Email</th>
+                                                                </tr>
+                                                            </thead>
+
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>{{this.etudiant.nom}} {{this.etudiant.prenom}}</td>
+                                                                    <td><a href="javascript:void(0);">{{this.etudiant.email}}</a></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="edit">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>Edit Profile</h2>
+                                                        <form class="ed_tabpersonal" (ngSubmit)="updateClient()" [formGroup]="updateForm">
+                                                            <div class="form-group">
+                                                                <label for="email">Email</label>
+                                                                <input type="email" id="email" class="form-control" placeholder="Email" formControlName="email" readonly>
+                                                                <div *ngIf="email?.touched && email?.invalid">
+                                                                    <small class="text-danger" *ngIf="email?.errors?.['required']">L'email est obligatoire</small>
+                                                                    <small class="text-danger" *ngIf="email?.errors?.['email']">Respectez le format email</small>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="nom">Nom</label>
+                                                                <input type="text" id="nom" class="form-control" placeholder="Nom" formControlName="nom">
+                                                                <div *ngIf="nom?.touched && nom?.invalid">
+                                                                    <small class="text-danger" *ngIf="nom?.errors?.['required']">Le nom est obligatoire</small>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="prenom">Prenom</label>
+                                                                <input type="text" id="prenom" class="form-control" placeholder="Prenom" formControlName="prenom">
+                                                                <div *ngIf="prenom?.touched && prenom?.invalid">
+                                                                    <small class="text-danger" *ngIf="prenom?.errors?.['required']">Le prenom est obligatoire</small>
+                                                                </div>
+                                                            </div>
+                                                           
+                                                            <div class="form-group">
+                                                                <label for="profilePhoto">Photo</label>
+                                                                <input type="file" accept="image/*" formControlName="image" (change)="onSelectFile($event)">
+                                                            </div>
+                                                            
+                                                            <div class="form-group btn-group">
+                                                                <button class="btn ed_btn ed_green btn-submit" type="submit">Save Changes</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <!--tab End-->
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="setting">
+                                    <div class="ed_dashboard_inner_tab">
+                                        <div role="tabpanel">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li role="presentation"><a class="active" href="#general" aria-controls="general" role="tab" data-bs-toggle="tab">Change Password</a></li>
+                                                
+                                            </ul>
+
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="general">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>general setting</h2>
+
+                                                        <form class="ed_tabpersonal" (ngSubmit)="checkOldPassword()" [formGroup]="oldPasswordForm" [@fadeInOut]="oldPasswordConfirmed ? 'in' : 'out'">
+                                                            <div class="form-group">
+                                                              <input type="text" class="form-control" [value]="userDetails.email" readonly>
+                                                            </div>
+                                                            <div class="form-group" *ngIf="!oldPasswordConfirmed">
+                                                              <input type="password" formControlName="oldPassword" class="form-control" placeholder="Ancien mot de passe">
+                                                              <!-- Error Message for Required Field -->
+                                                              <div *ngIf="oldPasswordForm.get('oldPassword').touched && oldPasswordForm.get('oldPassword').hasError('required')" class="error" style="color: red;">
+                                                                Le champ du mot de passe ancien est requis.
+                                                              </div>
+                                                            </div>
+                                                            <div class="form-group" *ngIf="!oldPasswordConfirmed">
+                                                              <button class="btn ed_btn ed_green" type="submit" [disabled]="isLoading || oldPasswordForm.invalid">
+                                                                Vérifier l'ancien mot de passe
+                                                              </button>
+                                                              <div *ngIf="isLoading" class="spinner"></div>
+                                                            </div>
+                                                          </form>
+                                                          
+                                                        <form class="ed_tabpersonal" *ngIf="oldPasswordConfirmed" (ngSubmit)="updatePassword()" [formGroup]="updateForm1" [@fadeInOut]="oldPasswordConfirmed ? 'in' : 'out'">
+                                                            
+                                                            <div class="form-group">
+                                                              <input type="password" formControlName="password" class="form-control" placeholder="Nouveau mot de passe">
+                                                              <div *ngIf="password?.touched && password?.invalid">
+                                                                <small class="text-danger" *ngIf="password?.errors?.['required']">
+                                                                    Le mot de passe est obligatoire
+                                                                </small>
+                                                                <small class="text-danger" *ngIf="password?.errors?.['maxlength']">
+                                                                    Maximum 8 caractères
+                                                                </small>
+                                                            </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                              <input type="password" formControlName="confirmPassword" class="form-control" placeholder="Répéter le nouveau mot de passe">
+                                                            </div>
+                                                            <div class="form-group">
+                                                              <button class="btn ed_btn ed_green" type="submit">Enregistrer les modifications</button>
+                                                            </div> 
+                                                          </form>
+                                                          
+                                                          
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="email">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>email notification</h2>
+                                                        <span>Send an email notice when:</span>
+                                                        <table id="notification_settings">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="title">Activity</th>
+                                                                    <th class="yes">Yes</th>
+                                                                    <th class="no">No</th>
+                                                                </tr>
+                                                            </thead>
+
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>A member mentions you in an update using "@andrehouse123"</td>
+                                                                    <td class="yes"><input type="radio" name="activity1" value="yes" checked="checked"></td>
+                                                                    <td class="no"><input type="radio" name="activity1" value="no"></td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>A member replies to an update or comment you've posted</td>
+                                                                    <td><input type="radio" name="activity2" value="yes" checked="checked"></td>
+                                                                    <td><input type="radio" name="activity2" value="no"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <button class="btn ed_btn ed_green">save changes</button>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="visibility">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>profile visibility</h2>
+                                                        <table id="visibility_settings">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="title">Name</th>
+                                                                    <th class="yes">Visibility</th>
+                                                                </tr>
+                                                            </thead>
+
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Andre House</td>
+                                                                    <td>Everyone</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <button class="btn ed_btn ed_green">save setting</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+
+                                        </div>
+                                        <!--tab End-->
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="forums">
+                                    <div class="ed_dashboard_inner_tab">
+                                        <div role="tabpanel">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li role="presentation"><a class="active" href="#started" aria-controls="started" role="tab" data-bs-toggle="tab">topics started</a></li>
+                                                <li role="presentation"><a href="#replies" aria-controls="replies" role="tab" data-bs-toggle="tab">replies created</a></li>
+                                                <li role="presentation"><a href="#favourite" aria-controls="favourite" role="tab" data-bs-toggle="tab">favourite</a></li>
+                                                <li role="presentation"><a href="#subscribed" aria-controls="subscribed" role="tab" data-bs-toggle="tab">subscribed</a></li>
+                                            </ul>
+
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="started">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>forum topics started</h2>
+                                                        <span>You have not created any topics.</span>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="replies">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>forum replies created</h2>
+                                                        <span>You have not replied to any topics.</span>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="favourite">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>favorite forum topics</h2>
+                                                        <span>You currently have no favourite topics.</span>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="subscribed">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>subscribed forums</h2>
+                                                        <span>You are not currently subscribed to any forums.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!--tab End-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+       <app-footer></app-footer>
+    </div>
+   
+</body>
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:33 GMT -->
+</html>

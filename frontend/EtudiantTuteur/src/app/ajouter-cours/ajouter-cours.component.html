@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Educo
+Version: 3.0.0
+Author: 
+Website: 
+Purchase: 
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!-- Begin Head -->
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/courses.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:18 GMT -->
+<head>
+    <meta charset="utf-8" />
+    <title>Educo Multipurpose Responsive HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Educo" />
+    <meta name="keywords" content="Educo, html template, Education template" />
+    <meta name="author" content="Kamleshyadav" />
+    <meta name="MobileOptimized" content="320" />
+
+   
+</head>
+
+<body>
+    <!--Page main section start-->
+    <div id="educo_wrapper">
+        
+        <app-header *ngIf="token; else noRole"></app-header>
+
+        <!-- Template to render if 'role' is null or undefined -->
+        <ng-template #noRole>
+          <app-header2></app-header2>
+        </ng-template>
+
+        <div class="ed_pagetitle">
+           
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-4 col-sm-6">
+                        <div class="page_title">
+                            <h2>Ajouter Cours</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-sm-6">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">home</a></li>
+                            <li><i class="fa fa-chevron-left"></i></li>
+                            <li><a href="course.html">Ajouter Cours</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="authincation h-100">
+                <div class="container-fluid h-100">
+                    <div class="row h-100">
+                        <!-- Image Section -->
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="pages-left h-100">
+                                <div class="login-content text-center">
+                                </div>
+                                <div class="login-media text-center">
+                                    <img _ngcontent-qbo-c16="" _ngcontent-epp-c7="" _ngcontent-aeb-c7="" src="assets/cours.png" alt="" style="padding-left: 145px;padding-right: 50px;margin-left: -70px;">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Form Section -->
+                        <div class="col-lg-6 col-md-12 col-sm-12 mx-auto align-self-center">
+                            <div class="login-form">
+                                <div class="text-center">
+                                    <h3 class="title">Ajouter Cours</h3>
+                                    <p></p>
+                                </div>
+                                <form (ngSubmit)="addNewCour()" [formGroup]="AjouterForm" >
+                                    <div class="mb-4">
+                                        <label class="mb-1 text-dark">Nom</label>
+                                        <input type="text" class="form-control form-control"  formControlName="nom">
+                                    </div>
+                                    <div class="mb-4 position-relative">
+                                        <label class="mb-1 text-dark">description</label>
+                                        <textarea type="text" id="dz-password" class="form-control"  formControlName="description" > </textarea>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="mb-1 text-dark">Prix</label>
+                                        <input type="number" class="form-control form-control"  formControlName="prix">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="file" accept="image/*" formControlName="image" (change)="onSelectFile($event)">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="mb-1 text-dark">Catégorie</label>
+                                        <select class="form-control" formControlName="categorie">
+                                            <option  *ngFor="let categorie of listcategorie" [value]="categorie.id">{{categorie.nomCategorie}}</option>
+                                         
+                                            
+                                        </select>
+                                    </div>
+                                   
+                                    <div class="text-center mb-4">
+                                        <button  type="submit" class="btn btn-primary">Ajouter</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+       
+
+    </div>
+    <!--Page main section end-->
+   <app-footer></app-footer>
+   
+</body>
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/courses.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:28 GMT -->
+</html>
+

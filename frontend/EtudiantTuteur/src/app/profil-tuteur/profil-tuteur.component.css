@@ -1,0 +1,337 @@
+
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #007bff;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Css affichage cours */
+
+#b .tab-pane {
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-container {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.tab-content {
+    animation: fadeTabContent 0.5s ease-in-out;
+}
+
+@keyframes fadeTabContent {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+#b .ed_item_img img {
+    width: 100%;
+    height: auto;
+}
+
+#b .ed_item_description h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#b .ed_getinvolved {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#b .ed_getinvolved:hover {
+    background-color: #0056b3;
+}
+
+/* end affichage css cours */
+
+/*  affichage css dashboard tuteur */
+
+/* Custom CSS for instructor tab */
+/* Custom CSS for instructor tab */
+.tab-pane.active {
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.instructor-details {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.detail-item {
+    margin-bottom: 15px;
+}
+
+.label {
+    font-weight: bold;
+    width: 80px;
+    display: inline-block;
+}
+
+.value {
+    display: inline-block;
+    margin-left: 10px;
+    color: #333;
+}
+
+/* Animation */
+.tab-content {
+    animation: fade-in 0.5s ease;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.spinner {
+    border: 4px solid rgba(0,0,0,.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #09f;
+    animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Course Card Container */
+.course-card {
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    padding: 15px;
+    text-align: center;
+}
+
+.course-card:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Course Image Styling */
+.course-image {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.course-fixed-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Course Description Styling */
+.course-description h4 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+.course-price {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.course-meta {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.course-description p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Button Styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.update-btn,
+.supprimer-btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 0;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.update-btn {
+    background-color: #007bff;
+}
+
+.supprimer-btn {
+    background-color: #d9534f;
+}
+
+.supprimer-btn:hover,
+.update-btn:hover {
+    transform: scale(1.05);
+}
+
+.supprimer-btn:active,
+.update-btn:active {
+    transform: scale(0.95);
+}
+
+.supprimer-btn:hover {
+    background-color: #c9302c;
+}
+
+.update-btn:hover {
+    background-color: #0056b3;
+}
+
+.update-btn i,
+.supprimer-btn i {
+    margin-left: 5px;
+}
+
+.row.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.course-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%; /* Makes the card stretch full height */
+}
+
+.course-description {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows the description to grow and fill available space, pushing buttons to the bottom */
+    padding: 15px;
+}
+
+.course-description .button-container {
+    margin-top: auto; /* Pushes the button container to the bottom */
+}
+
+.course-image img {
+    width: 100%; /* Ensures image takes full width of the container */
+    height: auto;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+
+

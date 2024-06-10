@@ -1,0 +1,265 @@
+/* General Styles */
+body {
+    background-color: #f4f7f6; /* Soft background color */
+    color: #5a5a5a; /* Primary text color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Container and Row */
+  .container {
+    max-width: 1200px; /* Set a max-width for larger screens */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Courses Grid */
+  .col-lg-9, .col-lg-3 {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  /* Sidebar */
+  .col-lg-3 {
+    background-color: #ffffff; /* Sidebar background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Top margin for sidebar */
+  }
+  
+  /* Course Item Styles */
+  .ed_mostrecomeded_course {
+    background-color: #ffffff; /* Card background */
+    border-radius: 4px;
+    margin-bottom: 30px; /* Space between cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .ed_mostrecomeded_course:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Widget Styles */
+  .widget {
+    margin-bottom: 40px;
+  }
+  
+  .widget .widget-title {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .widget ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .widget ul li {
+    margin-bottom: 10px;
+  }
+  
+  .widget ul li a {
+    color: #5a5a5a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .widget ul li a:hover,
+  .widget ul li a:focus {
+    color: #337ab7;
+  }
+  
+  /* No Courses Styles and Animations */
+  .ed_no_courses {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInUp 0.5s ease-out 0.2s forwards;
+  }
+  
+  .ed_no_courses img {
+    max-width: 30%; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 1rem;
+    animation: fadeIn 0.5s ease-out 0.5s forwards; /* Delayed fade in for the image */
+  }
+  
+  .ed_no_courses p {
+    font-size: 1.5rem;
+    color: #555;
+    text-align: center;
+    margin: 1rem 0 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    animation: fadeIn 0.5s ease-out 0.7s forwards; /* Delayed fade in for the text */
+  }
+  
+  /* Keyframe Animations */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Design Adjustments */
+  @media (max-width: 768px) {
+    .ed_no_courses {
+      padding: 1rem;
+      min-height: 300px;
+    }
+  
+    .ed_no_courses img {
+      max-width: 50%;
+    }
+  
+    .ed_no_courses p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Buttons and Links Styling */
+  .ed_getinvolved, .pagination li a {
+    background-color: #337ab7;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .ed_getinvolved:hover,
+  .pagination li a:hover {
+    background-color: #286090; /* Darken on hover */
+  }
+  
+  .pagination li.active a {
+    background-color: #337ab7;
+  }
+  
+  body {
+    background-color: #f4f7f6; /* Soft background color */
+    color: #5a5a5a; /* Primary text color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font style */
+}
+
+/* Container and Row */
+.container {
+    max-width: 1200px; /* Set a max-width for larger screens */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Added padding for better spacing */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px; /* Adjusted margin for precise alignment */
+}
+
+/* Sidebar */
+.sidebar_wrapper {
+    padding: 15px; /* Padding for internal sidebar spacing */
+    background-color: #ffffff; /* Clear white background for sidebar */
+    border-radius: 8px; /* Rounded corners for sidebar */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.sidebar_wrapper:hover {
+    transform: translateY(-5px); /* Slight raise effect on hover */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Deeper shadow for prominent effect */
+}
+
+/* Widget Title */
+.widget-title {
+    font-size: 18px; /* Larger font size for headers */
+    font-weight: bold; /* Bold font for emphasis */
+    color: #333333; /* Deeper color for contrast */
+    padding-bottom: 10px; /* Space below titles */
+    border-bottom: 2px solid #efefef; /* Subtle line under the title */
+    margin-bottom: 20px; /* Spacing after title */
+}
+
+/* Widget Links */
+.widget ul li a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #f8f9fa; /* Light background for each item */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    transition: all 0.3s ease; /* Transition for hover effect */
+}
+
+.widget ul li a:hover {
+    background-color: #e9ecef; /* Slightly darker on hover */
+    color: #0056b3; /* Change color on hover for better visibility */
+    text-decoration: none; /* No underline on hover */
+}
+
+/* Course Cards */
+.ed_mostrecomeded_course {
+    border: none; /* Remove borders */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions for transformation */
+}
+
+.ed_mostrecomeded_course:hover {
+    transform: scale(1.03); /* Slightly enlarge cards on hover */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2); /* Enhanced shadow on hover for depth */
+}
+
+/* Images and Descriptions */
+.ed_item_img img {
+    width: 100%; /* Ensure full width */
+    height: auto; /* Maintain aspect ratio */
+    border-top-left-radius: 4px; /* Rounded top corners */
+    border-top-right-radius: 4px; /* Rounded top corners */
+}
+
+.ed_item_description {
+    padding: 15px; /* Padding within the card */
+    background: #ffffff; /* White background */
+    border-bottom-left-radius: 4px; /* Rounded bottom corners */
+    border-bottom-right-radius: 4px; /* Rounded bottom corners */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Smaller padding on smaller screens */
+    }
+
+    .ed_no_courses img {
+        max-width: 100%; /* Full width images on small screens */
+    }
+}
+
+/* Button Styling for Actions */
+.btn-primary {
+    background-color: #007bff; /* Primary button color */
+    border-color: #007bff; /* Border color same as background */
+    transition: background-color 0.2s ease-in-out; /* Smooth transition for background color */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-color: #004085; /* Corresponding darker border on hover */
+}
+  

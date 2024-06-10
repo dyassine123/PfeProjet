@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<!-- Mirrored from w3crm.dexignzone.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Feb 2024 21:42:15 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:title" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:image" content="social-image.png">
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>W3CRM Customer Relationship Management</title>
+	
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+  <div id="preloader">
+		<div class="lds-ripple">
+			<div></div>
+			<div></div>
+		</div>
+    </div>
+  
+    <div id="main-wrapper">
+
+        <app-header></app-header>
+
+        <app-menu></app-menu>
+
+        <div class="content-body">
+			
+            <!-- container starts -->
+            <div class="container-fluid">
+				
+                <!-- row -->
+				<div class="element-area">
+					<div class="demo-view">
+					  <div class="container-fluid pt-0 ps-0 pe-lg-4 pe-0">
+						<!-- Column starts -->
+						<div class="col-xl-12">
+						  <div class="card dz-card" id="accordion-one">
+							<div class="card-header d-flex justify-content-between align-items-center">
+							  <h4 class="card-title">Liste Des Contacts</h4>
+							  <div class="input-group" style="max-width: 300px;"> 
+								<input type="text" class="form-control" placeholder="Search..." aria-label="Search" [(ngModel)]="searchQuery">
+								<div class="input-group-append">
+								  <button class="btn btn-outline-secondary" type="button">
+									<i class="fa fa-search"></i>
+								  </button>
+								</div>
+							  </div>
+							</div>
+							<!-- tab-content -->
+							<div class="tab-content" id="myTabContent">
+							  <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="home-tab">
+								<div class="card-body pt-0">
+								  
+								  <div *ngIf="filteredContacts.length > 0; else noContactsTemplate" class="table-responsive mt-3">
+									<table id="example" class="table">
+									  <thead>
+										<tr>
+										  <th>#</th>
+										  <th>Nom</th>
+										  <th>Email</th>
+										  <th>Sujet</th>
+										  <th>Message</th>
+										  <th>Action</th>
+										</tr>
+									  </thead>
+									  <tbody>
+										<tr *ngFor="let contact of filteredContacts |paginate:{itemsPerPage:10,currentPage:p}">
+										  <td>{{ contact.id }}</td>
+										  <td>{{ contact.nom }}</td>
+										  <td>{{ contact.email }}</td>
+										  <td>{{ contact.sujet }}</td>
+										  <td>{{ contact.message }}</td>
+										  <td>
+											<div class="d-flex justify-content-center">
+											  <a href="#" (click)="DeleteContact(contact)" class="btn btn-danger shadow btn-xs sharp">
+												<i class="fa fa-trash"></i>
+											  </a>
+											</div>
+										  </td>
+										</tr>
+									  </tbody>
+									</table>
+									<pagination-controls style="text-align: right;" (pageChange)="p = $event"></pagination-controls>
+								  </div>
+								  <ng-template #noContactsTemplate>
+									<div class="alert alert-warning mt-3" role="alert">
+									  Aucun contact trouvé.
+									</div>
+								  </ng-template>
+								</div>
+							  </div>
+							  
+							</div>
+							
+						  </div>
+						</div>
+						
+					  </div>
+					</div>
+				  </div>
+				  
+				  
+				  
+			</div>			
+        </div>
+       
+		<app-footer></app-footer>
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+   
+</body>
+
+<!-- Mirrored from w3crm.dexignzone.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Feb 2024 21:42:18 GMT -->
+</html>

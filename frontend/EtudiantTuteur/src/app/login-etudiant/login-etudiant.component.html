@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Educo
+Version: 3.0.0
+Author: 
+Website: 
+Purchase: 
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!-- Begin Head -->
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/become_teacher.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:33 GMT -->
+<head>
+    <meta charset="utf-8" />
+    <title>Educo Multipurpose Responsive HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Educo" />
+    <meta name="keywords" content="Educo, html template, Education template" />
+    <meta name="author" content="Kamleshyadav" />
+    <meta name="MobileOptimized" content="320" />
+
+   
+</head>
+
+<body>
+  <app-header *ngIf="token; else noRole"></app-header>
+
+  <!-- Template to render if 'role' is null or undefined -->
+  <ng-template #noRole>
+    <app-header2></app-header2>
+  </ng-template>
+    <!--Page main section start-->
+    <div id="educo_wrapper">
+      
+        
+        
+        <!--Breadcrumb start-->
+       
+        <!--Breadcrumb end-->
+        <!-- Section: Design Block -->
+        <section class="">
+            <!-- Jumbotron -->
+            <div class="px-4 py-5 px-md-5 text-center text-lg-start animated-bg" style="background-color: hsl(0, 0%, 100%)">
+              <div class="container">
+                <div class="row gx-lg-5 align-items-center">
+                  <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="my-5 display-3 fw-bold ls-tight slide-in-text">
+                      La meilleure offre <br />
+                      <span class="text-primary">Pour votre succès</span>
+                    </h1>
+          
+                  </div>
+          
+                  <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card fade-in-up">
+                      <div class="card-body py-5 px-md-5">
+                        <form (ngSubmit)="login()" [formGroup]="loginForm">
+                          <!-- Email input -->
+                          <div class="form-outline mb-4">
+                            <input type="email" id="form3Example3" class="form-control" formControlName="email" />
+                            <label class="form-label" for="form3Example3">adresse e-mail</label>
+                          </div>
+          
+                          <!-- Password input -->
+                          <div class="form-outline mb-4">
+                            <input type="password" id="form3Example4" class="form-control" formControlName="password" />
+                            <label class="form-label" for="form3Example4">mot de passe</label>
+                          </div>
+
+                          <a href="verifier" class="forgot-password-link">Mot de passe oublié ?</a>
+          
+                          <!-- Submit button -->
+                          <button type="submit" class="btn btn-primary btn-block mb-4 hover-effect">
+                            Connexion
+                          </button>
+          
+                          <!-- Registration Link -->
+                          <p class="text-center">Pas encore de compte? <a href="registerEtudiant">Inscrivez-vous ici</a>.</p>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Jumbotron -->
+          </section>
+          
+  <!-- Section: Design Block -->
+        
+
+        
+
+    </div>
+    <!--Page main section end-->
+   
+   
+    
+</body>
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/become_teacher.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:33 GMT -->
+</html>
+

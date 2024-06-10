@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Educo
+Version: 3.0.0
+Author: 
+Website: 
+Purchase: 
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!-- Begin Head -->
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/instructor.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:32 GMT -->
+<head>
+    <meta charset="utf-8" />
+    <title>Educo Multipurpose Responsive HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Educo" />
+    <meta name="keywords" content="Educo, html template, Education template" />
+    <meta name="author" content="Kamleshyadav" />
+    <meta name="MobileOptimized" content="320" />
+
+   
+</head>
+
+<body>
+    <!--Page main section start-->
+    <div id="educo_wrapper">
+        <!--Header start-->
+        <app-header *ngIf="token; else noRole"></app-header>
+
+        <!-- Template to render if 'role' is null or undefined -->
+        <ng-template #noRole>
+          <app-header2></app-header2>
+        </ng-template>
+        <!--header end -->
+        <!--Breadcrumb start-->
+        <div class="ed_pagetitle">
+            <div class="ed_img_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-4 col-sm-6">
+                        <div class="page_title">
+                            <h2>Educo Instructors</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-sm-6">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">home</a></li>
+                            <li><i class="fa fa-chevron-left"></i></li>
+                            <li><a href="instructor.html">educo instructors</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Breadcrumb end-->
+        
+        <!-- team member section start -->
+        <div class="ed_transprentbg ed_toppadder80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="ed_heading_top ed_bottompadder50">
+                            <h3>Nos instructeurs</h3>
+                        </div>
+                    </div>
+                    <div class="ed_search_wrapper">
+                        <input type="text" class="ed_search_input" id="tutorSearch" [(ngModel)]="searchQuery" placeholder="Search for tutors...">
+                    </div>
+                    <div class="ed_team_wrapper row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let tuteur of filteredTuteur">
+                            <div class="ed_team_member">
+                                <div class="ed_team_member_img">
+                                    <img [src]="tuteur.image ? tuteur.image : '/assets/utilisateur.jpg'"  alt="item1" class="img-responsive">
+                                </div>
+                                <div class="ed_team_member_description">
+                                    <h4><a href="instructor_dashboard.html">{{ tuteur.nom }} {{ tuteur.prenom }}</a></h4>
+                                    <h5>Ass. Professor</h5>
+                                    <p>Bisque ornate send dictum portal, mi torpor Sagittarius.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- team member section end -->
+        <!--chart section start -->
+        <div class="ed_graysection ed_section_custom_padding">
+        <div class="ed_graysection ed_toppadder90 ed_bottompadder90">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="ed_heading_top ed_bottompadder50">
+                            <h3>Pourquoi nous choisir</h3>
+                        </div>
+                    </div>
+                    <div class="ed_counter_wrapper row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                            <div class="ed_chart_ratio">
+                                <i class="fa fa-line-chart"></i>
+                                <h4>Étudiants diplômés</h4>
+                                <p>Tout au long de ces années, nous avons accompli un travail remarquable avec 250 étudiants</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                            <div class="ed_chart_ratio">
+                                <i class="fa fa-sliders"></i>
+                                <h4>Compétitions remportées</h4>
+                                <p>Seules les compétitions étaient celles qui se trouvaient à l'arrière des magazines que vous trouvez.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                            <div class="ed_chart_ratio">
+                                <i class="fa fa-folder-open-o"></i>
+                                <h4>Classes visitées</h4>
+                                <p>La façon dont vous configurez votre salle de classe peut-elle influencer la façon dont les étudiants pensent ?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- chart Section end -->
+       
+       <app-footer></app-footer>
+    </div>
+    <!--Page main section end-->
+    <!--Main js file start-->
+   
+</body>
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/instructor.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:33 GMT -->
+</html>

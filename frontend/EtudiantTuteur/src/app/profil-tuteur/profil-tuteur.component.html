@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Educo
+Version: 3.0.0
+Author: 
+Website: 
+Purchase: 
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!-- Begin Head -->
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/instructor_dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:33 GMT -->
+<head>
+    <meta charset="utf-8" />
+    <title>Educo Multipurpose Responsive HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Educo" />
+    <meta name="keywords" content="Educo, html template, Education template" />
+    <meta name="author" content="Kamleshyadav" />
+    <meta name="MobileOptimized" content="320" />
+
+   
+</head>
+
+<body>
+    <!--Page main section start-->
+    <div id="educo_wrapper">
+       <app-header></app-header>
+        <!--Breadcrumb start-->
+        <div class="ed_pagetitle">
+            <div class="ed_img_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-4 col-sm-6">
+                        <div class="page_title">
+                            <h2>profil tuteur</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-sm-6">
+                        <ul class="breadcrumb">
+                            <li><a href="">Accueil</a></li>
+                            <li><i class="fa fa-chevron-left"></i></li>
+                            <li><a href="profil">Mon profil</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Breadcrumb end-->
+        <!--instructor single start-->
+        <div class="ed_dashboard_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-12 col-12">
+                        <div class="ed_sidebar_wrapper">
+                            <div class="ed_profile_img">
+                                <img [src]="tuteur.image ? tuteur.image : '/assets/utilisateur.jpg'" alt="Profile Image" class="img-responsive" />
+                            </div>
+                            <h3>{{this.tuteur.nom}} {{this.tuteur.prenom}}</h3>
+                            
+                            <div class="ed_tabs_left">
+                                <ul class="nav nav-tabs">
+                                    <li><a class="active" href="#a" data-bs-toggle="tab">Dashboard</a></li>
+                                    <li><a href="#b" data-bs-toggle="tab">cours <span>{{ totalCourses }}</span></a></li>
+                                    
+                                    <li><a href="#profile" data-bs-toggle="tab">Parametres</a></li>
+                                    <li><a href="#setting" data-bs-toggle="tab">Changer de mot de passe</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 col-sm-12 col-12">
+                        <div class="ed_dashboard_tab">
+                            <div class="tab-content">
+
+
+                                <div class="tab-pane active" id="a">
+                                    <div class="ed_dashboard_inner_tab">
+                                        <div role="tabpanel">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li role="presentation" class="active"><a href="#view" aria-controls="view" role="tab" data-bs-toggle="tab">Détail de l'instructeur</a></li>
+                                            </ul>
+                                
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="view">
+                                                    <div class="ed_inner_dashboard_info">
+                                                        <h2 class="section-title">{{this.tuteur.nom}} {{this.tuteur.prenom}} (Tuteur)</h2>
+                                                        <div class="instructor-details">
+                                                            <div class="detail-item">
+                                                                <span class="label">Nom:</span>
+                                                                <span class="value">{{this.tuteur.nom}} {{this.tuteur.prenom}}</span>
+                                                            </div>
+                                                            <div class="detail-item">
+                                                                <span class="label">Email:</span>
+                                                                <span class="value">{{this.tuteur.email}}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                        </div>
+                                        <!--tab End-->
+                                    </div>
+                                </div>
+                                
+
+                                
+                                <div class="tab-pane" id="b">
+                                    <div class="ed_dashboard_inner_tab">
+                                        <div role="tabpanel">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li role="presentation"><a class="active" href="#my" aria-controls="my" role="tab" data-bs-toggle="tab">Cours</a></li>
+                                                
+                                            </ul>
+                                
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="my">
+                                                    <div class="ed_inner_dashboard_info">
+                                                        <h2>Tous les cours par {{ this.tuteur.nom }} {{ this.tuteur.prenom }}</h2>
+                                                        <div class="ed_mostrecomeded_course_slider">
+                                                            <div class="row flex-row">
+                                                                <div class="col-lg-4 col-md-6 col-sm-12 col-12 ed_bottompadder20"
+                                                                     *ngFor="let cours of listCours"
+                                                                     id="course-{{ cours.id }}">
+                                                                    <div class="course-card">
+                                                                        <div class="course-image">
+                                                                            <img src="{{ cours.image }}" alt="course image" class="img-responsive img-circle course-fixed-image">
+                                                                        </div>
+                                                                        <div class="course-description flex-grow">
+                                                                            <h4>{{ cours.nom }}</h4>
+                                                                            <span class="course-price">{{ cours.prix }} TND</span>
+                                                                            <div class="course-meta">
+                                                                                <span>{{ cours.categorie.nomCategorie }}</span>
+                                                                            </div>
+                                                                            <p>{{ cours.description }}</p>
+                                                                            <div class="button-container mt-auto">
+                                                                                <a href="/modifierCours/{{ cours.id }}" class="btn btn-primary update-btn">UpdateCours
+                                                                                    <i class="fa fa-edit"></i>
+                                                                                </a>
+                                                                                <button class="btn btn-danger supprimer-btn"
+                                                                                (click)="DeleteCours(cours)">Supprimer
+                                                                                    <i class="fa fa-trash"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                
+                                        </div>
+                                        <!--tab End-->
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="tab-pane" id="profile">
+                                    <div class="ed_dashboard_inner_tab">
+                                        <div role="tabpanel">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                
+                                                <li role="presentation"><a href="#edit" aria-controls="edit" role="tab" data-bs-toggle="tab">Modifier</a></li>
+                                            </ul>
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="view">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>Votre profil</h2>
+                                                        <table id="profile_view_settings">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Nom et Prenom</th>
+                                                                    <th>Email</th>
+                                                                </tr>
+                                                            </thead>
+
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>{{this.tuteur.nom}} {{this.tuteur.prenom}}</td>
+                                                                    <td><a href="javascript:void(0);">{{this.userDetails.email}}</a></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="edit">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>Modifier le profil</h2>
+                                                        <form class="ed_tabpersonal" (ngSubmit)="updateTuteur()" [formGroup]="updateForm">
+                                                            <div class="form-group">
+                                                                <label for="email">Email</label>
+                                                                <input type="email" id="email" class="form-control" placeholder="Email" formControlName="email" readonly>
+                                                                <div *ngIf="email?.touched && email?.invalid">
+                                                                    <small class="text-danger" *ngIf="email?.errors?.['required']">L'email est obligatoire</small>
+                                                                    <small class="text-danger" *ngIf="email?.errors?.['email']">Respectez le format email</small>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="nom">Nom</label>
+                                                                <input type="text" id="nom" class="form-control" placeholder="Nom" formControlName="nom">
+                                                                <div *ngIf="nom?.touched && nom?.invalid">
+                                                                    <small class="text-danger" *ngIf="nom?.errors?.['required']">Le nom est obligatoire</small>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="prenom">Prenom</label>
+                                                                <input type="text" id="prenom" class="form-control" placeholder="Prenom" formControlName="prenom">
+                                                                <div *ngIf="prenom?.touched && prenom?.invalid">
+                                                                    <small class="text-danger" *ngIf="prenom?.errors?.['required']">Le prenom est obligatoire</small>
+                                                                </div>
+                                                            </div>
+                                                           
+                                                            <div class="form-group">
+                                                                <label for="profilePhoto">Photo</label>
+                                                                <input type="file" accept="image/*" formControlName="image" (change)="onSelectFile($event)">
+                                                            </div>
+                                                            
+                                                            <div class="form-group btn-group">
+                                                                <button class="btn ed_btn ed_green btn-submit" type="submit">Enregistrer les modifications</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+
+                                                
+                                            </div>
+
+
+                                        </div>
+                                        <!--tab End-->
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="setting">
+                                    <div class="ed_dashboard_inner_tab">
+                                        <div role="tabpanel">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li role="presentation"><a class="active" href="#general" aria-controls="general" role="tab" data-bs-toggle="tab">Changer de mot de passe</a></li>
+                                                
+                                            </ul>
+
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="general">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>Paramètres généraux</h2>
+
+                                                        <form class="ed_tabpersonal" (ngSubmit)="checkOldPasswordTuteur()" [formGroup]="oldPasswordForm" [@fadeInOut]="oldPasswordConfirmed ? 'in' : 'out'">
+                                                            <div class="form-group">
+                                                              <input type="text" class="form-control" [value]="userDetails.email" readonly>
+                                                            </div>
+                                                            <div class="form-group" *ngIf="!oldPasswordConfirmed">
+                                                              <input type="password" formControlName="oldPassword" class="form-control" placeholder="Ancien mot de passe">
+                                                              <!-- Error Message for Required Field -->
+                                                              <div *ngIf="oldPasswordForm.get('oldPassword').touched && oldPasswordForm.get('oldPassword').hasError('required')" class="error">
+                                                                Le champ du mot de passe ancien est requis.
+                                                              </div>
+                                                            </div>
+                                                            <div class="form-group" *ngIf="!oldPasswordConfirmed">
+                                                              <button class="btn ed_btn ed_green" type="submit" [disabled]="isLoading || oldPasswordForm.invalid">
+                                                                Vérifier l'ancien mot de passe
+                                                              </button>
+                                                              <div *ngIf="isLoading" class="spinner"></div>
+                                                            </div>
+                                                          </form>
+                                                          
+                                                        <form class="ed_tabpersonal" *ngIf="oldPasswordConfirmed" (ngSubmit)="updatePasswordTuteur()" [formGroup]="updateForm1" [@fadeInOut]="oldPasswordConfirmed ? 'in' : 'out'">
+                                                            
+                                                            <div class="form-group">
+                                                              <input type="password" formControlName="password" class="form-control" placeholder="Nouveau mot de passe">
+                                                              <div *ngIf="password?.touched && password?.invalid">
+                                                                <small class="text-danger" *ngIf="password?.errors?.['required']">
+                                                                    Le mot de passe est obligatoire
+                                                                </small>
+                                                                <small class="text-danger" *ngIf="password?.errors?.['maxlength']">
+                                                                    Maximum 8 caractères
+                                                                </small>
+                                                            </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                              <input type="password" formControlName="confirmPassword" class="form-control" placeholder="Répéter le nouveau mot de passe">
+                                                            </div>
+                                                            <div class="form-group">
+                                                              <button class="btn ed_btn ed_green" type="submit">Enregistrer les modifications</button>
+                                                            </div> 
+                                                          </form>
+                                                          
+                                                          
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="email">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>email notification</h2>
+                                                        <span>Send an email notice when:</span>
+                                                        <table id="notification_settings">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="title">Activity</th>
+                                                                    <th class="yes">Yes</th>
+                                                                    <th class="no">No</th>
+                                                                </tr>
+                                                            </thead>
+
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>A member mentions you in an update using "@andrehouse123"</td>
+                                                                    <td class="yes"><input type="radio" name="activity1" value="yes" checked="checked"></td>
+                                                                    <td class="no"><input type="radio" name="activity1" value="no"></td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>A member replies to an update or comment you've posted</td>
+                                                                    <td><input type="radio" name="activity2" value="yes" checked="checked"></td>
+                                                                    <td><input type="radio" name="activity2" value="no"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <button class="btn ed_btn ed_green">save changes</button>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="visibility">
+                                                    <div class="ed_dashboard_inner_tab">
+                                                        <h2>profile visibility</h2>
+                                                        <table id="visibility_settings">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="title">Name</th>
+                                                                    <th class="yes">Visibility</th>
+                                                                </tr>
+                                                            </thead>
+
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Andre House</td>
+                                                                    <td>Everyone</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <button class="btn ed_btn ed_green">save setting</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+
+                                        </div>
+                                        <!--tab End-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!--instructor single end-->
+        <app-footer></app-footer>
+    </div>
+   
+    
+</body>
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/instructor_dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:33 GMT -->
+</html>

@@ -1,0 +1,13 @@
+.nav-header {
+    display: flex;
+    align-items: center; /* This will vertically center the logo if the nav-header has a larger height */
+    justify-content: space-between; /* This will space out the logo and the hamburger menu */
+    padding: 0 15px; /* Adjust padding as necessary */
+    
+}
+.nav-header img {
+    height: auto;  /* maintain the aspect ratio */
+    width: 100px;  /* adjust this value to your preference */
+
+
+}

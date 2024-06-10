@@ -1,0 +1,19 @@
+.ed_course_single_image img {
+    max-width: 100%;
+    height: auto;
+    image-rendering: optimizeQuality; /* or 'crisp-edges' or '-webkit-optimize-contrast' depending on browser support */
+}
+
+.green-button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.green-button:hover {
+    background-color: darkgreen; /* Slightly darker green on hover */
+}

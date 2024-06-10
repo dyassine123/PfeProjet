@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>W3CRM Customer Relationship Management</title>
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Professional Card Styles with Animation */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+            padding: 1.5rem;
+            min-height: 160px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 0.5rem;
+        }
+
+        .icon-box i {
+            font-size: 2rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0;
+            font-size: 3rem;
+        }
+
+        .card h6 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .container-fluid {
+            max-width: 1200px;
+        }
+
+        .dashboard-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .circle-card {
+            position: relative;
+            text-align: center;
+        }
+
+        .circle-card h3 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+        }
+
+        .project-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .project-list li {
+            padding: 0.25rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .project-list li svg {
+            margin-right: 0.5rem;
+        }
+
+        .progress-bar {
+            background-color: #007bff;
+        }
+    </style>
+</head>
+
+<body data-typography="poppins" data-theme-version="light" data-layout="vertical" data-nav-headerbg="black" data-headerbg="color_1">
+
+    <div id="main-wrapper">
+        <app-header></app-header>
+        <app-menu></app-menu>
+
+        <div class="content-body">
+            <!-- Breadcrumb -->
+            <div class="page-titles">
+                <ol class="breadcrumb">
+                    <li class="dashboard-title">Dashboard</li>
+                </ol>
+                
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12 wid-100">
+                        <div class="row">
+                            <!-- Administrateurs Card -->
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="card shadow-lg animate__animated animate__fadeIn same-card">
+                                    <div class="card-body depostit-card p-0">
+                                        <div class="depostit-card-media d-flex justify-content-between align-items-center p-3">
+                                            <div>
+                                                <h6>Administrateurs</h6>
+                                                <h3>{{ totalAdmins }}</h3>
+                                            </div>
+                                            <div class="icon-box bg-primary-light">
+                                                <i class="fas fa-user-shield text-primary"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Étudiants Card -->
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="card shadow-lg animate__animated animate__fadeIn same-card">
+                                    <div class="card-body depostit-card p-0">
+                                        <div class="depostit-card-media d-flex justify-content-between align-items-center p-3">
+                                            <div>
+                                                <h6>Étudiants</h6>
+                                                <h3>{{ totalClients }}</h3>
+                                            </div>
+                                            <div class="icon-box bg-danger-light">
+                                                <i class="fas fa-user-graduate text-danger"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tuteurs Card -->
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="card shadow-lg animate__animated animate__fadeIn same-card">
+                                    <div class="card-body depostit-card p-0">
+                                        <div class="depostit-card-media d-flex justify-content-between align-items-center p-3">
+                                            <div>
+                                                <h6>Tuteurs</h6>
+                                                <h3>{{ totalTuteurs }}</h3>
+                                            </div>
+                                            <div class="icon-box bg-success-light">
+                                                <i class="fas fa-chalkboard-teacher text-success"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cours Card -->
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="card shadow-lg animate__animated animate__fadeIn same-card">
+                                    <div class="card-body depostit-card p-0">
+                                        <div class="depostit-card-media d-flex justify-content-between align-items-center p-3">
+                                            <div>
+                                                <h6>Cours</h6>
+                                                <h3>{{ totalCours }}</h3>
+                                            </div>
+                                            <div class="icon-box bg-warning-light">
+                                                <i class="fas fa-book text-warning"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="card shadow-lg animate__animated animate__fadeIn circle-card">
+                                    <div class="card-body depostit-card p-0">
+                                        <canvas id="categorieSpecialiteExpertiseChart" width="200" height="200"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+							<div class="col-lg-4 col-md-6 mb-4">
+								<div class="card shadow-lg animate__animated animate__fadeIn same-card">
+									<div class="card-body depostit-card p-0">
+										<div class="depostit-card-media d-flex justify-content-between align-items-center p-3">
+											<div>
+												<h6>Messages</h6>
+												<h3>{{ totalContact }}</h3>
+											</div>
+											<div class="icon-box bg-info"> 
+												<i class="fas fa-envelope text-success"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <app-footer></app-footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

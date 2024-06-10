@@ -1,0 +1,144 @@
+/* Center the entire Liste des Cours section including the card */
+.element-area {
+    display: flex;
+    justify-content: center; /* Horizontally center the child elements */
+}
+
+.demo-view, .container-fluid {
+    width: 100%; /* Ensure full width for responsiveness */
+}
+
+.col-xl-12 {
+    max-width: 1200px; /* Adjust this value based on your preferred max width for the card */
+    margin: auto; /* This will center the column if its width is less than 100% of its parent */
+}
+
+/* If .demo-view is the direct parent of .col-xl-12 and you want to ensure it's centered */
+.demo-view {
+    display: flex;
+    justify-content: center; /* Center its children horizontally */
+}
+
+/* Ensure the card fills its container but maintains padding and center alignment */
+.card.dz-card {
+    margin: 0 auto; /* Center the card within its container */
+    width: auto; /* Adjust width as necessary, auto should work if you want to keep the card's original width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visibility */
+}
+
+/* Base Styling */
+.container-fluid {
+    padding: 2rem;
+}
+
+/* Card Styling */
+.card {
+    background: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    margin: 0;
+}
+
+/* Search Input and Button Styling with Animation */
+.input-group {
+    transition: transform 0.2s ease-in-out;
+}
+
+.input-group .form-control {
+    border-radius: 0.25rem;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.input-group .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.input-group .btn-outline-secondary {
+    border-radius: 0.25rem;
+}
+
+.input-group .btn-outline-secondary:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Table Styling */
+.table-responsive {
+    margin-top: 1rem;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.table thead th {
+    padding: 10px;
+    border: none;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s;
+}
+
+.table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+.table tbody td {
+    padding: 10px;
+}
+
+/* Pagination and No Data Alert Styling */
+.pagination-controls {
+    text-align: right;
+    padding-top: 1rem;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border-color: #ffeeba;
+    margin-top: 1rem;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .card-header, .card-body {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-group {
+        width: 100%;
+    }
+
+    .pagination-controls {
+        text-align: center;
+    }
+}
+

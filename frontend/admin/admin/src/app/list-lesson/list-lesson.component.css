@@ -1,0 +1,27 @@
+/* Center the entire Liste des Cours section including the card */
+.element-area {
+    display: flex;
+    justify-content: center; /* Horizontally center the child elements */
+}
+
+.demo-view, .container-fluid {
+    width: 100%; /* Ensure full width for responsiveness */
+}
+
+.col-xl-12 {
+    max-width: 1200px; /* Adjust this value based on your preferred max width for the card */
+    margin: auto; /* This will center the column if its width is less than 100% of its parent */
+}
+
+/* If .demo-view is the direct parent of .col-xl-12 and you want to ensure it's centered */
+.demo-view {
+    display: flex;
+    justify-content: center; /* Center its children horizontally */
+}
+
+/* Ensure the card fills its container but maintains padding and center alignment */
+.card.dz-card {
+    margin: 0 auto; /* Center the card within its container */
+    width: auto; /* Adjust width as necessary, auto should work if you want to keep the card's original width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visibility */
+}

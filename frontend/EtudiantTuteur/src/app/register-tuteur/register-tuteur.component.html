@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Educo
+Version: 3.0.0
+Author: 
+Website: 
+Purchase: 
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!-- Begin Head -->
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/become_teacher.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:33 GMT -->
+<head>
+    <meta charset="utf-8" />
+    <title>Educo Multipurpose Responsive HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Educo" />
+    <meta name="keywords" content="Educo, html template, Education template" />
+    <meta name="author" content="Kamleshyadav" />
+    <meta name="MobileOptimized" content="320" />
+
+   
+</head>
+
+<body>
+    <!--Page main section start-->
+    <div id="educo_wrapper">
+      
+        <app-header *ngIf="token; else noRole"></app-header>
+
+        <!-- Template to render if 'role' is null or undefined -->
+        <ng-template #noRole>
+          <app-header2></app-header2>
+        </ng-template>
+        
+        <!--Breadcrumb start-->
+        <div class="ed_pagetitle">
+            <div class="ed_img_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-4 col-sm-6">
+                        <div class="page_title">
+                            <h2>Tuteur</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-sm-6">
+                        <ul class="breadcrumb">
+                            <li><a href="">Accueil</a></li>
+                            <li><i class="fa fa-chevron-left"></i></li>
+                            <li><a href="become_teacher.html">Inscription Tuteur</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Breadcrumb end-->
+        <!--teacher_form_wrapper start-->
+        <div class="ed_graysection ed_toppadder80 ed_bottompadder80">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12">
+                        <div class="ed_teacher_div">
+                            <h3>Remplissez ce formulaire et devenez un <span>Enseignant <i class="fa fa-hand-o-down"></i></span></h3>
+                            <form class="ed_teacher_form" (ngSubmit)="addNewTuteur()" [formGroup]="tuteurForm">
+                                <div class="form-group">
+                                    <label class="control-label">Prénom :</label>
+                                    <input type="text" class="form-control" formControlName="prenom">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Nom :</label>
+                                    <input type="text" class="form-control" formControlName="nom">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Email :</label>
+                                    <input type="text" class="form-control" formControlName="email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Mot de passe :</label>
+                                    <input type="password" class="form-control" formControlName="password">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Confirmation du mot de passe :</label>
+                                    <input type="password" class="form-control" formControlName="confirmPassword">
+                                    <div *ngIf="tuteurForm.hasError('notSame') && tuteurForm.get('confirmPassword').dirty" class="text-danger">
+                                        Le mot de passe ne correspondent pas.
+                                      </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="expertise" class="control-label">Expertise :</label>
+                                    <select formControlName="domaine" class="form-control">
+                                        <option *ngFor="let domaine of listdomaine" [value]="domaine.id">{{ domaine.nomDomaine }}</option>
+                                      </select>
+                                </div>
+        
+                                <button type="Submit" class="btn ed_btn ed_green">Rejoindre</button>
+        
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!--teacher_form_wrapper end-->
+        <!--Newsletter Section six start-->
+        <div class="ed_newsletter_section">
+            <div class="ed_img_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="row">
+                            <div class="col-lg-7 col-md-7 col-sm-12 col-12">
+                                <div class="ed_newsletter_section_heading">
+                                    <h4>Let us inform you about everything important directly.</h4>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                                <div class="row">
+                                    <div class="ed_newsletter_section_form">
+                                        <form class="form row m-0">
+                                            <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                                                <input class="form-control" type="text" placeholder="Newsletter Email" />
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                                                <button class="btn ed_btn ed_green">confirm</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Newsletter Section six end-->
+       
+        <app-footer></app-footer>
+
+    </div>
+    <!--Page main section end-->
+   
+</body>
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/become_teacher.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:33 GMT -->
+</html>

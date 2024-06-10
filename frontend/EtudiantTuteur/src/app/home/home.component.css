@@ -1,0 +1,250 @@
+/* General Styles */
+body {
+  font-family: 'Trirong', serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+h4, h5, p {
+  margin: 0;
+}
+
+/* Tutors Navigation Section */
+.tutor-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tutor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  flex: 1;
+}
+
+.tutor-card {
+  width: 250px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  text-align: center;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.tutor-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.tutor-img-container {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tutor-img {
+  width: 100%;
+  height: auto;
+}
+
+.tutor-info {
+  margin-top: 15px;
+}
+
+.tutor-name {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.tutor-title {
+  font-size: 14px;
+  color: #666;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tutor-desc {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 24px;
+}
+
+.nav-btn:hover {
+  color: #ff6600;
+}
+
+/* Courses Navigation Section */
+.course-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ed_mostrecomeded_course_slider {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex: 1;
+}
+
+.course-card {
+  width: 320px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.course-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.ed_item_img img {
+  width: 100%;
+  height: auto;
+}
+
+.ed_most_recomended_data h4 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.ed_most_recomended_data p {
+  margin: 10px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.course-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.course_faculty img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.course_faculty a {
+  color: #333;
+  text-decoration: none;
+}
+
+.ed_getinvolved {
+  text-decoration: none;
+  background-color: #ff6600;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.ed_getinvolved i {
+  margin-left: 5px;
+}
+
+.ed_getinvolved:hover {
+  background-color: #ff8533;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-body {
+  flex: 1; /* Ensures the body takes up all available space after other content is placed */
+}
+
+.ed_team_wrapper .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; /* This ensures that all child elements take full height */
+}
+
+/* Each card should grow to take up the space available in its flex container */
+.ed_team_wrapper .col-lg-3,
+.ed_team_wrapper .col-md-4,
+.ed_team_wrapper .col-sm-6,
+.ed_team_wrapper .col-12 {
+  display: flex;
+  flex: 1 0 auto; /* Ensures that the flex basis adjusts automatically */
+}
+
+/* Ensures the team member card takes up the full height of its container */
+.ed_team_member {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Stretch to fill the container */
+}
+
+/* Makes the description take all available space, pushing any other elements like buttons to the bottom */
+.ed_team_member_description {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Spreads out the content vertically */
+}
+
+.ed_team_member_img {
+  width: 150px; /* Set a fixed width */
+  height: 150px; /* Set a fixed height */
+  overflow: hidden; /* Hide overflow to maintain the circle shape */
+  border-radius: 50%; /* Makes the image round */
+  display: flex;
+  align-items: center; /* Aligns the image vertically */
+  justify-content: center; /* Centers the image horizontally */
+  margin: 0 auto 10px; /* Center align the image container and add space below */
+  background-color: #f4f4f4; /* Optional: a background color for images with transparency */
+}
+
+.ed_team_member_img img {
+  width: auto; /* Maintain aspect ratio */
+  height: 100%; /* Make the image fill the height */
+  min-width: 100%; /* Ensure it covers the width */
+  min-height: 100%; /* Cover the entire area */
+  object-fit: cover; /* Cover the area, trimmed if necessary */
+}

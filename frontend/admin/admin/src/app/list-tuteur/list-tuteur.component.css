@@ -1,0 +1,170 @@
+/* Center the entire Liste des Cours section including the card */
+.element-area {
+    display: flex;
+    justify-content: center; /* Horizontally center the child elements */
+}
+
+.demo-view, .container-fluid {
+    width: 100%; /* Ensure full width for responsiveness */
+}
+
+.col-xl-12 {
+    max-width: 1200px; /* Adjust this value based on your preferred max width for the card */
+    margin: auto; /* This will center the column if its width is less than 100% of its parent */
+}
+
+/* If .demo-view is the direct parent of .col-xl-12 and you want to ensure it's centered */
+.demo-view {
+    display: flex;
+    justify-content: center; /* Center its children horizontally */
+}
+
+/* Ensure the card fills its container but maintains padding and center alignment */
+.card.dz-card {
+    margin: 0 auto; /* Center the card within its container */
+    width: auto; /* Adjust width as necessary, auto should work if you want to keep the card's original width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visibility */
+}
+
+/* Base Styling */
+.container-fluid {
+    padding: 2rem;
+}
+
+/* Card Styling */
+.card {
+    background: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    margin: 0;
+}
+
+/* Table Styling */
+.table-responsive {
+    margin-top: 1rem;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead th {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s;
+}
+
+.table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+.table tbody td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+/* Search Input and Button Interaction Effects */
+.input-group .form-control {
+    border-radius: 0.25rem;
+    border-right: 0;
+    box-shadow: none;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.input-group .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.input-group .btn-outline-secondary {
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.input-group .btn-outline-secondary:hover {
+    background-color: #0056b3;
+    color: white;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Pagination and Alert Styling */
+.pagination-controls {
+    text-align: right;
+    padding-top: 1rem;
+}
+
+.alert-warning {
+    margin-top: 1rem;
+    background-color: #fff3cd;
+    color: #856404;
+    border-color: #ffeeba;
+}
+
+/* Button hover effect */
+.btn-primary, .btn-danger {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.btn-primary:hover, .btn-danger:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .card-header, .card-body {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-group {
+        width: 100%;
+    }
+
+    .pagination-controls {
+        text-align: center;
+    }
+}
+
+
+
+
+/* Button hover animation */
+.btn-transition {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .btn-transition:hover {
+    transform: scale(1.05); /* Adjust the scale value to control the hover effect size */
+  }
+  
+  /* Optional: Add a slight shadow effect on hover for better depth */
+  .btn-transition:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }

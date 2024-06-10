@@ -1,0 +1,224 @@
+/* Base styling for improved aesthetics */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Enhanced card styling with gradient and shadow */
+.card {
+    border: none;
+    overflow: hidden;
+    border-radius: 8px; /* Rounded corners */
+    background: linear-gradient(145deg, #ffffff, #e6e8eb); /* Subtle gradient background */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1), -5px -5px 15px rgba(255,255,255,0.1); /* Soft shadow for depth */
+}
+
+.card-header {
+    background: linear-gradient(to right, #007bff, #0062cc); /* Gradient background */
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+}
+
+/* Improved table styling */
+.table thead th {
+    background-color: #0062cc; /* Darker shade for header */
+    color: #fff;
+    border-bottom: 2px solid #007bff;
+}
+
+.table tbody tr:hover {
+    background-color: #f4f7f6; /* Hover effect for table rows */
+}
+
+/* Button enhancements */
+.btn-xs {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem;
+}
+
+.btn-success, .btn-danger {
+    transition: transform 0.2s ease; /* Smooth transition for button press */
+}
+
+.btn-success:hover, .btn-danger:hover {
+    transform: scale(1.05); /* Slightly enlarge buttons on hover */
+}
+
+/* Search input enhancement */
+input[type=search] {
+    outline: none;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1), inset -2px -2px 5px rgba(255,255,255,0.7); /* Inset shadow for depth */
+}
+
+/* Pagination controls enhancement */
+.pagination-controls {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* No courses template styling */
+#noCoursTemplate {
+    text-align: center;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+    .card-header, .d-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card {
+        margin: 10px; /* Add margin for mobile layout */
+    }
+
+    input[type=search] {
+        margin-bottom: 20px; /* Space out elements on smaller screens */
+    }
+}
+
+/* General animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Apply fadeIn animation to card and table */
+.card, .table {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Button press animation */
+@keyframes press {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.btn-success, .btn-danger {
+    /* Trigger animation on click */
+    animation: none;
+}
+
+.btn-success:active, .btn-danger:active {
+    /* Apply press animation on active state */
+    animation: press 0.2s ease;
+}
+
+/* Hover effect for table rows with gradient background */
+.table tbody tr:hover {
+    background-image: linear-gradient(to right, #f4f7f6, #e6e8eb);
+    cursor: pointer;
+}
+
+/* Search input focus animation */
+input[type=search]:focus {
+    animation: shadowPulse 1s infinite alternate;
+}
+
+@keyframes shadowPulse {
+    from {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+    }
+    to {
+        box-shadow: 0 0 10px 10px rgba(0, 123, 255, 0);
+    }
+}
+
+/* Animation for pagination control hover */
+.pagination-controls:hover {
+    animation: colorPulse 2s infinite alternate;
+}
+
+@keyframes colorPulse {
+    from {
+        color: #007bff;
+    }
+    to {
+        color: #0056b3;
+    }
+}
+
+/* Center the entire Liste des Cours section including the card */
+.element-area {
+    display: flex;
+    justify-content: center; /* Horizontally center the child elements */
+}
+
+.demo-view, .container-fluid {
+    width: 100%; /* Ensure full width for responsiveness */
+}
+
+.col-xl-12 {
+    max-width: 1200px; /* Adjust this value based on your preferred max width for the card */
+    margin: auto; /* This will center the column if its width is less than 100% of its parent */
+}
+
+/* If .demo-view is the direct parent of .col-xl-12 and you want to ensure it's centered */
+.demo-view {
+    display: flex;
+    justify-content: center; /* Center its children horizontally */
+}
+
+/* Ensure the card fills its container but maintains padding and center alignment */
+.card.dz-card {
+    margin: 0 auto; /* Center the card within its container */
+    width: auto; /* Adjust width as necessary, auto should work if you want to keep the card's original width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visibility */
+}
+
+
+
+.d-flex {
+    display: flex;
+    align-items: center; /* This will vertically center align items if your table row has variable height */
+    justify-content: center; /* This will horizontally center your button */
+  }
+  .btn {
+    display: inline-block; /* Ensures that the button doesn't stretch to fill the container */
+    margin: 0; /* Adjusts the margin to your preference */
+  }
+
+  /* Styles pour l'image miniature */
+ .image-thumbnail {
+    width: 50px; /* Taille initiale de l'image */
+    transition: transform 0.3s ease; /* Transition pour l'effet de zoom */
+  }
+
+  /* Styles pour l'image agrandie */
+  .image-full {
+    max-width: 80%; /* Taille maximale de l'image agrandie */
+    max-height: 80%;
+    position: fixed; /* Position fixe pour centrer l'image */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Assure que l'image agrandie est au-dessus de tout le reste */
+    opacity: 0; /* Image initialement invisible */
+    pointer-events: none; /* Désactive les événements de souris pour l'image initialement */
+    transition: opacity 0.3s ease; /* Transition pour l'effet d'apparition */
+  }
+
+  /* Style pour la case à cocher */
+  #zoom-checkbox {
+    display: none; /* Masquer la case à cocher */
+  }
+
+  /* Style pour l'état "checked" de la case à cocher */
+  #zoom-checkbox:checked + .image-thumbnail + .image-full {
+    opacity: 1; /* Rendre l'image agrandie visible */
+    pointer-events: auto; /* Activer les événements de souris pour l'image agrandie */
+  }
+
+  /* Style pour l'image agrandie lorsqu'elle est cliquée */
+  #zoom-checkbox:checked + .image-thumbnail {
+    transform: scale(1.2); /* Agrandissement de l'image miniature */
+  }
+  
+
+

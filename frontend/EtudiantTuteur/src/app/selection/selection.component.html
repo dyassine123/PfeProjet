@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Educo
+Version: 3.0.0
+Author: 
+Website: 
+Purchase: 
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!-- Begin Head -->
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/instructor.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:32 GMT -->
+<head>
+    <meta charset="utf-8" />
+    <title>Educo Multipurpose Responsive HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Educo" />
+    <meta name="keywords" content="Educo, html template, Education template" />
+    <meta name="author" content="Kamleshyadav" />
+    <meta name="MobileOptimized" content="320" />
+
+   
+</head>
+
+<body>
+    <!--Page main section start-->
+    <div id="educo_wrapper">
+        <app-header *ngIf="token; else noRole"></app-header>
+
+        <!-- Template to render if 'role' is null or undefined -->
+        <ng-template #noRole>
+          <app-header2></app-header2>
+        </ng-template>
+        <!--Breadcrumb start-->
+        <div class="ed_pagetitle">
+            <div class="ed_img_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-4 col-sm-6">
+                        <div class="page_title">
+                            <h2>Connexion</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-sm-6">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">home</a></li>
+                            <li><i class="fa fa-chevron-left"></i></li>
+                            <li><a href="instructor.html">Connexion</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ed_transprentbg ed_toppadder80">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="ed_team_wrapper row">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                            <div class="ed_team_member">
+                                <div class="ed_team_member_img">
+                                 <a href="loginEtudiant"><img src="assets/etudiant.jpg" alt="item1" class="img-responsive"></a> 
+                                </div>
+                                <div class="ed_team_member_description">
+                                    <h3><a href="loginEtudiant">Etudiant</a></h3>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                            <div class="ed_team_member">
+                                <div class="ed_team_member_img">
+                                    <img src="assets/tuteur.png" alt="item1" class="img-responsive">
+                                </div>
+                                <div class="ed_team_member_description">
+                                    <h3><a href="loginTuteur">Tuteur</a></h3>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- team member section end -->
+        <!--chart section start -->
+       
+        <!-- chart Section end -->
+       
+       <app-footer></app-footer>
+    </div>
+    <!--Page main section end-->
+    
+</body>
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/instructor.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:33 GMT -->
+</html>

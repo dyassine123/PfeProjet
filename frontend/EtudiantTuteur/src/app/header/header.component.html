@@ -1,0 +1,99 @@
+ <!--Header start-->
+ <header id="ed_header_wrapper">
+    <div class="ed_header_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <p>Bienvenue à notre nouvelle session de formation</p>
+                    <div class="ed_info_wrapper">
+                        <a *ngIf="!token" href="select" id="login_button">Connexion</a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ed_header_bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-12">
+                    <img _ngcontent-upa-c1="" src="/assets/logo1.png" alt="logo" style="margin-bottom: -1px;margin-top: -5px;">
+                </div>
+                <div class="col-xl-8 col-lg-2 col-md-1 col-sm-12 col-12">
+                    <div class="main-menu-container">
+                        <div class="main-menu">
+                            <ul>
+                                <li class="has-sub-menu">
+                                    <a href="">Accueil</a>
+                                    
+                                </li>
+                                <li><a href="about">À propos de nous</a></li>
+                               
+
+                                
+                                <li class="has-sub-menu">
+                                    <a href="javascript:void(0);">cours / Tuteurs</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="cours">Tous les cours</a></li>
+                                        <li><a href="listTuteur">Tous les tuteurs</a></li>
+                                       
+                                    </ul>
+                                </li>
+                                
+                                <li ><a href="contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="d-flex align-items-center justify-content-end"> 
+                      <!-- Avatar -->
+                      <div class="dropdown" *ngIf="token">
+                        <a class="icon-big dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <!-- Image for Etudiant -->
+                          <img *ngIf="userRole === 'etudiant'"
+                          [src]="etudiant.image ? etudiant.image : '/assets/utilisateur.jpg'"
+                          class="rounded-circle avatar-large"
+                          alt="Avatar Étudiant"
+                          loading="lazy"
+                     />
+                          <!-- Image for Tuteur -->
+                          <img *ngIf="userRole === 'tuteur'"
+                            [src]="tuteur.image ? tuteur.image : '/assets/utilisateur.jpg'"
+                            class="rounded-circle avatar-large"
+                            alt="Avatar Tuteur"
+                            loading="lazy"
+                          />
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end animated fadeIn" aria-labelledby="navbarDropdownMenuAvatar">
+                          <li *ngIf="userRole === 'etudiant'">
+                            <a class="dropdown-item" href="profil/{{ userDetails.id }}">Mon profil</a>
+                          </li>
+                          <li *ngIf="userRole === 'tuteur'">
+                            <a class="dropdown-item" href="profilTuteur/{{ userDetails.id }}">Mon profil</a>
+                          </li>
+                          
+                          <li *ngIf="userRole === 'tuteur'">
+                            <a class="dropdown-item" href="ajoutercours">Ajouter Cours</a>
+                          </li>
+                          
+                          <li><a (click)="logout()" class="dropdown-item" href="#">Se déconnecter</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+<!--header end -->

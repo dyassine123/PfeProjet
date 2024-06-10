@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<!-- Mirrored from w3crm.dexignzone.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Feb 2024 21:42:15 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:title" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:image" content="social-image.png">
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>W3CRM Customer Relationship Management</title>
+	
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+  <div id="preloader">
+		<div class="lds-ripple">
+			<div></div>
+			<div></div>
+		</div>
+    </div>
+  
+    <div id="main-wrapper">
+
+       
+       <app-header></app-header>
+                    
+      
+        <app-menu></app-menu>
+     
+        <div class="content-body">
+			
+            <!-- container starts -->
+            <div class="container-fluid">
+				
+                <!-- row -->
+				<div class="col-xl-12">
+					<div class="card dz-card" id="accordion-three">
+					  <div class="card-header flex-wrap d-flex justify-content-between">
+						<h4 class="card-title"><strong>Liste des Admins</strong></h4>
+		
+						
+						  <label>
+							Search:
+							<input type="search" [(ngModel)]="searchQuery" class="form-control form-control-sm" placeholder="">
+						  </label>
+						
+					  </div>
+					
+					  <table *ngIf="filteredAdmins.length > 0; else noAdminsTemplate" id="example3" class="display table" style="min-width: 845px">
+						<thead>
+						  <tr>
+							<th>Nom</th>
+							<th>Prenom</th>
+							<th>Email</th>
+							<th >Role</th>
+							<th *ngIf="admin.role=='superAdmin'">Action</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr *ngFor="let admins of filteredAdmins |paginate:{itemsPerPage:2,currentPage:p}">
+							<td>{{ admins.nom }}</td>
+							<td>{{ admins.prenom }}</td>
+							<td><strong>{{ admins.email }}</strong></td>
+							<td >{{ admins.role }}</td>
+							<td *ngIf="admin.role=='superAdmin'">
+							  <div class="d-flex">
+								<a href="/modifieradmin/{{admins.id}}" class="btn btn-success shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+								<a href="#" (click)="Deleteadmin(admin)" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+							  </div>
+							</td>
+						  </tr>
+						</tbody>
+					  </table>
+					  <pagination-controls style="text-align: right;" (pageChange)="p = $event"></pagination-controls>
+					 
+					  <ng-template #noAdminsTemplate>
+						<div class="alert alert-warning" role="alert">
+						  Il n'y a pas d'admins.
+						</div>
+					  </ng-template>
+					</div>
+				  </div>
+				  
+			</div>			
+        </div>
+       
+         <app-footer></app-footer>
+    
+
+        
+    </div>
+  
+   
+</body>
+
+<!-- Mirrored from w3crm.dexignzone.com/xhtml/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Feb 2024 21:42:18 GMT -->
+</html>

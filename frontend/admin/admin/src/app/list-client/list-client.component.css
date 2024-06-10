@@ -1,0 +1,137 @@
+/* Center the entire Liste des Cours section including the card */
+.element-area {
+    display: flex;
+    justify-content: center; /* Horizontally center the child elements */
+}
+
+.demo-view, .container-fluid {
+    width: 100%; /* Ensure full width for responsiveness */
+}
+
+.col-xl-12 {
+    max-width: 1200px; /* Adjust this value based on your preferred max width for the card */
+    margin: auto; /* This will center the column if its width is less than 100% of its parent */
+}
+
+/* If .demo-view is the direct parent of .col-xl-12 and you want to ensure it's centered */
+.demo-view {
+    display: flex;
+    justify-content: center; /* Center its children horizontally */
+}
+
+/* Ensure the card fills its container but maintains padding and center alignment */
+.card.dz-card {
+    margin: 0 auto; /* Center the card within its container */
+    width: auto; /* Adjust width as necessary, auto should work if you want to keep the card's original width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visibility */
+}
+
+/* Base Styling */
+.container-fluid {
+    padding: 2rem;
+}
+
+/* Card Styling */
+.card {
+    background: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.card-header {
+    background: #007bff;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.card-title {
+    margin: 0;
+}
+
+/* Table Styling */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.table thead th {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+/* Search Input Animation */
+input[type="search"] {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid #007bff;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="search"]:focus {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    border-color: #0056b3;
+    outline: none;
+}
+
+/* Pagination and Alert Styling */
+.pagination-controls {
+    text-align: right;
+    padding-top: 10px;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border-color: #ffeeba;
+}
+
+/* Button Interaction Effects */
+.btn-success, .btn-danger {
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover, .btn-danger:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .card-header, .card-body {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pagination-controls {
+        text-align: center;
+    }
+
+    input[type="search"] {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+

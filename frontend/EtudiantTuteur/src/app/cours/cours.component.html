@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Educo
+Version: 3.0.0
+Author: 
+Website: 
+Purchase: 
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!-- Begin Head -->
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/course_sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:28 GMT -->
+<head>
+    <meta charset="utf-8" />
+    <title>Educo Multipurpose Responsive HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Educo" />
+    <meta name="keywords" content="Educo, html template, Education template" />
+    <meta name="author" content="Kamleshyadav" />
+    <meta name="MobileOptimized" content="320" />
+
+    <!--srart theme style -->
+    
+</head>
+
+<body>
+    <!--Page main section start-->
+    <div id="educo_wrapper">
+        <!--Header start-->
+        <app-header *ngIf="token; else noRole"></app-header>
+
+        <!-- Template to render if 'role' is null or undefined -->
+        <ng-template #noRole>
+          <app-header2></app-header2>
+        </ng-template>
+
+        <!--header end -->
+        <!--Breadcrumb start-->
+        <div class="ed_pagetitle">
+            <div class="ed_img_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-4 col-sm-6">
+                        <div class="page_title">
+                            <h2> Cours</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-sm-6">
+                        <ul class="breadcrumb">
+                            <li><a href="">Accueil</a></li>
+                            <li><i class="fa fa-chevron-left"></i></li>
+                            <li><a href="/cours"> Cours</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Breadcrumb end-->
+        <!-- Section eleven start -->
+        <div class="ed_courses ed_toppadder80 ed_bottompadder80">
+            <div class="container">
+                <div class="row">
+                    <!-- Sidebar on the left -->
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-12">
+                        <div class="sidebar_wrapper_upper">
+                            <div class="sidebar_wrapper">
+                                <aside class="widget widget_search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchQuery">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button" (click)="activeCategory = ''; searchQuery = '';"><i class="fa fa-search"></i></button>
+                                        </span>
+                                    </div>
+                                </aside>
+                                <aside class="widget widget_categories">
+                                    <h4 class="widget-title">Course Categories</h4>
+                                    <ul>
+                                        <li (click)="setActiveCategory('')">
+                                            <a href="javascript:void(0);"><i class="fa fa-chevron-right"></i> Show All</a>
+                                        </li>
+                                        <li *ngFor="let categorie of listCategorie" (click)="setActiveCategory(categorie.nomCategorie)">
+                                            <a href="javascript:void(0);"><i class="fa fa-chevron-right"></i> {{ categorie.nomCategorie }}</a>
+                                        </li>
+                                    </ul>
+                                </aside>
+                                <aside class="widget widget_categories">
+                                    <h4 class="widget-title">Tuteurs</h4>
+                                    <ul>
+                                        <li (click)="setActiveTuteur(null)">
+                                            <a href="javascript:void(0);"><i class="fa fa-chevron-right"></i> Show All</a>
+                                        </li>
+                                        <li *ngFor="let tuteur of listTuteur" (click)="setActiveTuteur(tuteur.id)">
+                                            <a href="javascript:void(0);"><i class="fa fa-chevron-right"></i>{{ tuteur.prenom }} {{ tuteur.nom }}</a>
+                                        </li>
+                                    </ul>
+                                </aside>
+                                <aside class="widget widget_categories">
+                                    <h4 class="widget-title">Course Type</h4>
+                                    <ul>
+                                        <li><a href="javascript:void(0);"><i class="fa fa-chevron-right"></i> All</a></li>
+                                        <li><a href="javascript:void(0);"><i class="fa fa-chevron-right"></i> Paid</a></li>
+                                        <li><a href="javascript:void(0);"><i class="fa fa-chevron-right"></i> Free</a></li>
+                                    </ul>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course listings on the right -->
+                    <div class="col-lg-9 col-md-12 col-sm-12">
+                        <div class="row">
+                            <div *ngIf="filteredCours.length === 0" class="ed_no_courses">
+                                <img src="assets/notfound.jpeg" alt="No Courses" class="no_courses_image">
+                                <p>Il n'y a pas de cours.</p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" *ngFor="let cours of filteredCours">
+                                <div class="ed_mostrecomeded_course">
+                                    <div class="ed_item_img">
+                                        <img src="{{ cours.image }}" alt="item1" class="img-responsive">
+                                    </div>
+                                    <div class="ed_item_description ed_most_recomended_data">
+                                        <h4><a href="course_single.html">{{ cours.nom }} </a><span>{{ cours.prix }} Dt</span></h4>
+                                        <div class="row">
+                                            <div class="ed_rating">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <div class="ed_stardiv">
+                                                                <div class="star-rating"><span style="width:80%;"></span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                            <!-- Empty for spacing -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                    <div class="ed_views">
+                                                        <span>{{ cours.categorie.nomCategorie }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course_detail">
+                                            <div class="course_faculty">
+                                                <img [src]="cours.tuteur.image ? cours.tuteur.image : '/assets/utilisateur.jpg'" alt=""> <a href="instructor_dashboard.html">{{ cours.tuteur.nom }}</a>
+                                            </div>
+                                        </div>
+                                        <p>{{ cours.description }}</p>
+                                        <a href="/coursDetails/{{cours.id}}" class="ed_getinvolved">get involved <i class="fa fa-long-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container -->
+        </div>
+        
+        <!-- Section eleven end -->
+        
+        <!--Footer Top section start-->
+       <app-footer></app-footer>
+    </div>
+    <!--Page main section end-->
+
+    <!--Main js file start-->
+    
+</body>
+
+
+<!-- Mirrored from kamleshyadav.com/html/educo/educo/default/course_sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Mar 2024 23:02:30 GMT -->
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from w3crm.dexignzone.com/xhtml/form-wizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Feb 2024 21:42:11 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:title" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:description" content="W3crm:Customer Relationship Management Admin Bootstrap 5 Template">
+	<meta property="og:image" content="social-image.png">
+	<meta name="format-detection" content="telephone=no">
+
+	
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+  <div id="preloader">
+		<div class="lds-ripple">
+			<div></div>
+			<div></div>
+		</div>
+    </div>
+   
+    <div id="main-wrapper">
+
+     
+	   <app-header></app-header>
+    
+        <app-menu></app-menu>	
+		
+      
+        <div class="content-body">
+			
+            <div class="container-fluid">
+				
+                <!-- row -->
+			<!-- Form to add Domaine -->
+			<div id="domaineForm" class="form-container">
+				<h2>Ajouter Expertise</h2>
+				<form id="formDomaine" (ngSubmit)="addNewDomaine()" [formGroup]="DomaineForm">
+					<div *ngIf="nomDomaine?.touched && nomDomaine?.invalid">	
+						<small class="text-danger" *ngIf="nomDomaine?.errors?.['required']">					
+							nomExpertise est obligatoire
+						</small>
+					</div>
+					<input type="text" name="nomExpertise" class="input-field" placeholder="Nom du expertise" formControlName="nomDomaine">
+					<button type="submit" class="submit-btn">Ajouter Expertise</button>
+					<button type="button" id="ajouterSpecialiteBtn" onclick="showSpecialiteForm()">Ajouter Spécialité</button>
+					<button type="button" id="ajouterCategorieBtn" onclick="showCategorieForm()">Ajouter Categorie</button>
+				</form>
+			</div>
+			
+			  
+			  <div id="specialiteForm" class="form-container hidden">
+				<h2>Ajouter Spécialité</h2>
+				<form id="formSpecialite"(ngSubmit)="addNewSpecialite()"[formGroup]="SpecialiteForm">
+					<div *ngIf="nomSpecialite?.touched && nomSpecialite?.invalid">	
+						<small class="text-danger" *ngIf="nomSpecialite?.errors?.['required']">					
+							nomSpecialite est obligatoire
+						</small>
+					</div>
+				  <input type="text"class="input-field" name="nomSpecialite" placeholder="Nom de la spécialité" formControlName="nomSpecialite">
+				  <button type="submit"class="submit-btn">Ajouter Spécialité</button>
+				  
+				</form>
+			  </div>
+
+
+		  <div id="CategorieForm" class="form-container hidden">
+				<h2>Ajouter Categorie</h2>
+				<form id="formCategorie"(ngSubmit)="addNewCategorie()"[formGroup]="CategorieForm">
+					<div *ngIf="nomCategorie?.touched && nomCategorie?.invalid">	
+						<small class="text-danger" *ngIf="nomCategorie?.errors?.['required']">					
+							nomCategorie est obligatoire
+						</small>
+					</div>
+				  <input type="text"class="input-field" name="nomCategorie" placeholder="Nom de la categorie" formControlName="nomCategorie">
+				  <button type="submit"class="submit-btn">Ajouter Categorie</button>
+				</form>
+			  </div>
+			  
+  
+  
+            </div>
+        </div>
+        
+        <app-footer></app-footer>
+       
+
+        
+    </div>
+    
+
+
+</body>
+
+
+<!-- Mirrored from w3crm.dexignzone.com/xhtml/form-wizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Feb 2024 21:42:12 GMT -->
+</html>
